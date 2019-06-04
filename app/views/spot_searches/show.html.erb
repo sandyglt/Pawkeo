@@ -20,6 +20,14 @@
       <div class="cars">
       </div>
       <div class="addresses">
+        <ul>
+          <%@myaddresses.each do |address| %>
+            <li>
+              <h3><%= address.name %></h3>
+              <p><%= address.address %></p>
+            </li>
+         <% end %>
+        </ul>
         <%= simple_form_for(@address) do |form| %>
           <%= form.input :name %>
           <%= form.input :address %>
