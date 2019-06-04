@@ -3,9 +3,15 @@ class AddressesController < ApplicationController
     @address = current_user.addresses.build(address_params)
     @spot_search = SpotSearch.find(session[:spot_search_id])
     if @address.save
-      redirect_to spot_search_path(@spot_search)
+      respond_to do |format|
+        format.html { redirect_to spot_search_path(@spot_search) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
