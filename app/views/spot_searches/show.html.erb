@@ -1,2 +1,15 @@
-<h1>SpotSearches#show</h1>
-<p>Find me in app/views/spot_searches/show.html.erb</p>
+<%= simple_form_for(@address) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :address %>
+  <%= form.button :submit %>
+
+  <% if @address.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
