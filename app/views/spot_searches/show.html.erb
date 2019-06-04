@@ -1,39 +1,38 @@
 <div id="map" style="width: 100%; height: 100vh;">
-
-  <div class="map-header">
-    <div class="menu-btn">
-      <i class="fas fa-hamburger"></i>
+</div>
+<div class="map-header">
+  <div class="menu-btn">
+    <i class="fas fa-hamburger"></i>
+  </div>
+  <div class="search-bar">
+      <input class="ap-input" />
+  </div>
+</div>
+<div class="actions">
+  <div class="toggle-park">
+  </div>
+  <div class="around-me">
+  </div>
+</div>
+<div class="menu">
+  <div class="menu-header">
+  </div>
+  <div class="avatar">
+  </div>
+  <div class="menu-content">
+    <div class="cars">
     </div>
-    <div class="search-bar">
-        <input class="ap-input" />
+    <div class="addresses">
+      <ul id="address-list">
+        <%@myaddresses.each do |address| %>
+          <%= render 'address', address: address%>
+        <% end %>
+      </ul>
+    </div>
+    <div class="address-form">
+      <%= render 'form', address: @address %>
     </div>
   </div>
-  <div class="actions">
-    <div class="toggle-park">
-    </div>
-    <div class="around-me">
-    </div>
-  </div>
-  <div class="menu">
-    <div class="menu-header">
-    </div>
-    <div class="avatar">
-    </div>
-    <div class="menu-content">
-      <div class="cars">
-      </div>
-      <div class="addresses">
-        <ul id="address-list">
-          <%@myaddresses.each do |address| %>
-            <%= render 'address', address: address%>
-          <% end %>
-        </ul>
-      </div>
-      <div class="address-form">
-        <%= render 'form', address: @address %>
-      </div>
-    </div>
-    <div class="menu-footer">
-    </div>
+  <div class="menu-footer">
   </div>
 </div>

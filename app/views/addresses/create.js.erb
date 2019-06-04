@@ -1,18 +1,27 @@
 function refreshForm(innerHTML) {
-  const newAddressForm = document.getElementById('new_address');
+  const newAddressForm = document.querySelector('.address-form');
   newAddressForm.innerHTML = innerHTML;
 }
 
 function addAddress(addressHTML) {
   const addresses = document.getElementById('address-list');
   addresses.insertAdjacentHTML('beforeend', addressHTML);
-  console.log('adding address to the list')
 }
 
+function closeModal() {
+ document.querySelector('.close').click();
+}
+
+function openModal() {
+  document.getElementById('ModalAddressButton').click();
+}
+
+closeModal();
 <% if @address.errors.any? %>
-  refreshForm('<%= j render "spot_searches/form", address: @address %>')
+  refreshForm('<%= j render "spot_searches/form", address: @address %>');
+  openModal();
 <% else %>
-  addAddress('<%= j render "spot_searches/address", address: @address %>')
-  refreshForm('<%= j render "spot_searches/form", address: Address.new %>')
+  addAddress('<%= j render "spot_searches/address", address: @address %>');
+  refreshForm('<%= j render "spot_searches/form", address: Address.new %>');
 <% end %>
 
