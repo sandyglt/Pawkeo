@@ -1,15 +1,43 @@
-<%= simple_form_for(@address) do |form| %>
-  <%= form.input :name %>
-  <%= form.input :address %>
-  <%= form.button :submit %>
-
-  <% if @address.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @address.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="map">
+  <div class="map-header">
+    <div class="menu-btn">
     </div>
-  <% end %>
-<% end %>
+    <div class="search-bar">
+    </div>
+  </div>
+  <div class="actions">
+    <div class="toggle-park">
+    </div>
+    <div class="around-me">
+    </div>
+  </div>
+  <div class="menu">
+    <div class="menu-header">
+    </div>
+    <div class="avatar">
+    </div>
+    <div class="menu-content">
+      <div class="cars">
+      </div>
+      <div class="addresses">
+        <%= simple_form_for(@address) do |form| %>
+          <%= form.input :name %>
+          <%= form.input :address %>
+          <%= form.button :submit %>
+
+          <% if @address.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @address.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="menu-footer">
+    </div>
+  </div>
+</div>
