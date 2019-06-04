@@ -21,29 +21,14 @@
       <div class="cars">
       </div>
       <div class="addresses">
-        <ul>
+        <ul id="address-list">
           <%@myaddresses.each do |address| %>
-            <li>
-              <h3><%= address.name %></h3>
-              <p><%= address.address %></p>
-            </li>
-         <% end %>
-        </ul>
-        <%= simple_form_for(@address) do |form| %>
-          <%= form.input :name %>
-          <%= form.input :address %>
-          <%= form.button :submit %>
-
-          <% if @address.errors.any? %>
-            <div class="errors-container">
-              <ul>
-                <% @address.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
+            <%= render 'address', address: address%>
           <% end %>
-        <% end %>
+        </ul>
+      </div>
+      <div class="address-form">
+        <%= render 'form', address: @address %>
       </div>
     </div>
     <div class="menu-footer">

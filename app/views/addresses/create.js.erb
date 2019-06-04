@@ -1,0 +1,18 @@
+function refreshForm(innerHTML) {
+  const newAddressForm = document.getElementById('new_address');
+  newAddressForm.innerHTML = innerHTML;
+}
+
+function addAddress(addressHTML) {
+  const addresses = document.getElementById('address-list');
+  addresses.insertAdjacentHTML('beforeend', addressHTML);
+  console.log('adding address to the list')
+}
+
+<% if @address.errors.any? %>
+  refreshForm('<%= j render "spot_searches/form", address: @address %>')
+<% else %>
+  addAddress('<%= j render "spot_searches/address", address: @address %>')
+  refreshForm('<%= j render "spot_searches/form", address: Address.new %>')
+<% end %>
+
