@@ -1,15 +1,19 @@
-<div class="map">
+<div class="main">
+  <div id="map">
+  </div>
   <div class="map-header">
     <div class="menu-btn">
+      <i class="fas fa-hamburger"></i>
     </div>
     <div class="search-bar">
+        <input class="ap-input" />
     </div>
   </div>
-  <div class="actions">
-    <div class="toggle-park">
-    </div>
-    <div class="around-me">
-    </div>
+  <div class="toggle-park">
+    <i class="fas fa-car"></i>
+  </div>
+  <div class="around-me">
+    <i class="fas fa-crosshairs"></i>
   </div>
   <div class="menu">
     <div class="menu-header">
@@ -20,8 +24,16 @@
       <div class="cars">
       </div>
       <div class="addresses">
+        <ul id="address-list">
+          <%@myaddresses.each do |address| %>
+            <%= render 'address', address: address%>
+          <% end %>
+        </ul>
       </div>
-    </div>
+      <div class="address-form">
+        <%= render 'form', address: @address %>
+      </div>
+    </div>    
     <div class="menu-footer">
     </div>
   </div>

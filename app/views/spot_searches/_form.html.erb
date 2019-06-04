@@ -1,0 +1,35 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddress" id="ModalAddressButton">
+  Create a favorite address
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAddress" tabindex="-1" role="dialog" aria-labelledby="ModalAddressLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalFavoriteAddress">My new favorite address</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(address, remote: true) do |form| %>
+          <%= form.input :name %>
+          <%= form.input :address %>
+          <%= form.button :submit %>
+
+          <% if address.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% address.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
