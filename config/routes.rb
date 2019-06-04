@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/designhome', to: 'pages#designhome'
   resources :spot_searches, only: [ :show, :create ]
   resources :spots, only: [ :create, :update ]
   resources :addresses, only: [ :new, :create ]
