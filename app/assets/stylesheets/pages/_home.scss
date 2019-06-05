@@ -1,22 +1,94 @@
 // Specific CSS for your home-page
 
-.txt-gradient-purple-mag{
-  background-image:linear-gradient(to right, $purple, $magenta);
-  color:rgba(0, 0, 0, 0);
-  -webkit-background-clip:text;
-  background-clip:text;
-  position:relative;
+#logo {
+  padding-top: 15px;
+  padding-left: 15px;
+  width: 45%;
 }
 
-.txt-gradient-blue {
-  background-image:linear-gradient(to left, $purple, $light-blue);
-  color:rgba(0, 0, 0, 0);
-  -webkit-background-clip:text;
-  background-clip:text;
-  position:relative;
+.under-wave {
+  padding-top: 12%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  .description {
+    color: white;
+    text-shadow: 2px 2px 2px $purple;
+    p {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
 }
 
-h1 {
-  padding-top: 20px;
-  font-size: 60px;
+.phone-anim {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  img {
+  height: 320px;
+  width: 320px;
+  margin: auto;
 }
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }
+}
+
+.bottom-wave {
+  position:absolute;
+  bottom: -22px;
+  height: 68px;
+  width: 100%;
+  img {
+    padding:0;
+    margin:0;
+    height: 30px;
+  }
+}
+
+.btn-start {
+  color: white;
+  border: none;
+  width: 50%;
+  height: 60px;
+  margin: auto;
+  margin-top: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+  position: relative;
+  &:before {
+    content:"";
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(235,21,52,1) 0%, rgba(154,38,175,1) 50%, rgba(75,236,217,1) 100%);
+  }
+  &:after {
+    content:"";
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(235,21,52,1) 0%, rgba(154,38,175,1) 50%, rgba(75,236,217,1) 100%);
+  }
+  &:hover {
+    animation: roll;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+
+@keyframes roll {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }
