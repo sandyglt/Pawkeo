@@ -1,2 +1,22 @@
 // Specific CSS for your home-page
 
+.txt-gradient-purple-mag{
+  background-image:linear-gradient(to right, $purple, $magenta);
+  color:rgba(0, 0, 0, 0);
+  -webkit-background-clip:text;
+  background-clip:text;
+  position:relative;
+}
+
+.txt-gradient-blue {
+  background-image:linear-gradient(to left, $purple, $light-blue);
+  color:rgba(0, 0, 0, 0);
+  -webkit-background-clip:text;
+  background-clip:text;
+  position:relative;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 60px;
+}

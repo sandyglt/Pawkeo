@@ -2,17 +2,22 @@
   background-color: $dark-blue;
   font-size: 12px;
   padding: 15px;
-  width: 250px;
+  width: 240px;
   border-radius: 60px 60px 60px 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: absolute;
   top: 40%;
   right: 10%;
 h2 {
-  color: $light-blue;
   padding-left: 20px;
+  font-size: 20px;
+}
+span {
+  color: white;
+   font-size: 10px;
 }
 a {
-  color: white;
+  color: $light-blue;
+  font-size: 10px;
 }
 }
