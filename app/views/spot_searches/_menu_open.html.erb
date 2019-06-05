@@ -1,0 +1,23 @@
+ <div class="menu" id="menuglobal" style="visibility: hidden;">
+    <div class="menu-header">
+    </div>
+    <div class="avatar">
+    </div>
+    <div class="menu-content">
+      <div class="cars">
+      </div>
+      <div class="addresses">
+        <ul id="address-list">
+          <%@myaddresses.each do |address| %>
+            <%= render 'address', address: address%>
+          <% end %>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAddress" id="ModalAddressButton">
+        Create a favorite address
+      </button>
+    </div>
+    <div class="menu-footer">
+    </div>
+   </div>
+  </div>
