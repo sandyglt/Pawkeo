@@ -1,0 +1,30 @@
+.min-height-100vh {
+  min-height: 100vh;
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.txt-gradient-blue {
+  background-image:linear-gradient(to left, $light-blue, $purple);
+  color:rgba(0, 0, 0, 0);
+  -webkit-background-clip:text;
+}
+
+.txt-gradient-purple {
+  background-image:linear-gradient(to left, $purple, $magenta);
+  color:rgba(0, 0, 0, 0);
+  -webkit-background-clip:text;
+}
+
+.txt-gradient-rainbow {
+  background: linear-gradient(90deg, rgba(235,21,52,1) 0%, rgba(154,38,175,1) 50%, rgba(75,236,217,1) 100%);
+  color:rgba(0, 0, 0, 0);
+  -webkit-background-clip:text;
+}
+
+.bg-blue {
+  background-color: $dark-blue;
+}

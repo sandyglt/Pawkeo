@@ -12,7 +12,6 @@
     overflow: hidden;
 }
 
-
 .form-actions {
   background-image: linear-gradient(to bottom, $purple, #a52775);
   border-radius: 50px;
@@ -24,3 +23,6 @@
 }
 }
 
+#user_remember_me {
+    width: 10px;
+  }
