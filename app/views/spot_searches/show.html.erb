@@ -15,26 +15,6 @@
   <div class="around-me">
     <i class="fas fa-crosshairs"></i>
   </div>
-  <div class="menu">
-    <div class="menu-header">
-    </div>
-    <div class="avatar">
-    </div>
-    <div class="menu-content">
-      <div class="cars">
-      </div>
-      <div class="addresses">
-        <ul id="address-list">
-          <%@myaddresses.each do |address| %>
-            <%= render 'address', address: address%>
-          <% end %>
-        </ul>
-      </div>
-      <div class="address-form">
-        <%= render 'form', address: @address %>
-      </div>
-    </div>    
-    <div class="menu-footer">
-    </div>
-  </div>
+  <%= render 'menu_open'%>
 </div>
+
