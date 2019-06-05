@@ -14,9 +14,19 @@ User.create!(
 
 SpotSearch.create!(
   start_time: Date.new,
-  orig_lat: 48.8534,
-  orig_lng: 2.3488,
-  dest_lat: 48.8534,
-  dest_lng: 2.3488,
+  orig_lat: 48.8649,
+  orig_lng: 2.3800699999999324,
+  dest_lat: 48.8649,
+  dest_lng: 2.3800699999999324,
   user_id: User.last[:id],
 )
+
+
+30.times do
+  genlat = 48.868 + (rand()/1000)
+  genlng = 2.0 + ((rand(37..38).to_f/100)+(rand()/1000))
+Spot.create!(
+  lng: genlng,
+  lat: genlat,
+)
+end
