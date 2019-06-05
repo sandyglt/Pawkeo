@@ -1,13 +1,14 @@
-<div class="container p-3 d-flex flex-column">
+<div class="container p-3">
 
 <%= image_tag("pawkeo", style:"width:100px") %>
 
-<h1>Welcome to Pawkeo !</h1>
+<h1 class="txt-gradient-purple-mag">Welcome to PAWKEO</h1>
+<span>Let's find you a spot to park your car nearby, fast and easily...</span>
 </div>
 
   <div class="card-login">
 
-    <h2>Log In </h2>
+    <h2 class="txt-gradient-blue">But first...</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
