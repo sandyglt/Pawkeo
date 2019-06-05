@@ -64,6 +64,7 @@
   &:before {
     content:"";
     position: absolute;
+    border-radius: 5px;
     width: 5px;
     height: 60px;
     top: 0;
@@ -73,22 +74,23 @@
   &:after {
     content:"";
     position: absolute;
+    border-radius: 5px;
     width: 5px;
     height: 60px;
     top: 0;
     right: 0;
     background: linear-gradient(0deg, rgba(235,21,52,1) 0%, rgba(154,38,175,1) 50%, rgba(75,236,217,1) 100%);
   }
-  &:hover {
-    animation: roll;
-    animation-duration: 0.5s;
+  &:before, &:after {
+    animation: reduce;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
 }
 
-
-@keyframes roll {
-    from { transform: translate(0,  0px); }
-    65%  { transform: translate(0, 15px); }
-    to   { transform: translate(0, -0px); }
+@keyframes reduce {
+    from { transform: scaleY(1) }
+    50% { transform: scaleY(0.01) }
+    to   { transform: scaleY(1) }
+  }
