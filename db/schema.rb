@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_125306) do
+ActiveRecord::Schema.define(version: 2019_06_05_100623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2019_06_04_125306) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "latitude"
-    t.decimal "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_06_04_125306) do
 
   create_table "spot_searches", force: :cascade do |t|
     t.datetime "start_time"
-    t.decimal "orig_lng"
-    t.decimal "orig_lat"
-    t.decimal "dest_lng"
-    t.decimal "dest_lat"
+    t.float "orig_lng"
+    t.float "orig_lat"
+    t.float "dest_lng"
+    t.float "dest_lat"
     t.bigint "user_id"
     t.bigint "spot_id"
     t.datetime "created_at", null: false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2019_06_04_125306) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.decimal "lng"
-    t.decimal "lat"
+    t.float "lng"
+    t.float "lat"
     t.boolean "used", default: false, null: false
     t.string "size"
     t.datetime "taken_at"
