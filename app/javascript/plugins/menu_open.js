@@ -16,16 +16,14 @@ const toggle = (menuglobal) => {
 
 const btn = document.querySelector('.menu-btn');
 if (btn) {
-  btn.addEventListener('click', () => toggle('menuglobal'));
+  btn.addEventListener('click', () => Show('menuglobal'));
 }
 
 const menuglobal  = document.getElementById('menuglobal');
 if (menuglobal) {
-  window.addEventListener('touchend', () => {
+  window.addEventListener('touchmove', () => {
     // toggle('menuglobal')
     Hide('menuglobal');
-
-    console.log("i'm swiping")
   });
 }
 
