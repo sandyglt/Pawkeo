@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "User seed creation"
 User.create!(
   email: "test@pawkeo.com",
   password: 'testpawkeo',
   password_confirmation: 'testpawkeo',
 )
 
+puts "SpotSearch seed creation"
 SpotSearch.create!(
   start_time: Date.new,
   orig_lat: 48.8649,
@@ -22,11 +24,14 @@ SpotSearch.create!(
 )
 
 
-30.times do
-  genlat = 48.868 + (rand()/1000)
-  genlng = 2.0 + ((rand(37..38).to_f/100)+(rand()/1000))
+puts "60 Spots seeds creation"
+60.times do
+  genlat = 48.86 + rand(0.0..0.015)
+  genlng = 2.37 + rand(0.0..0.03)
 Spot.create!(
   lng: genlng,
   lat: genlat,
 )
 end
+
+puts "Seeds done"
