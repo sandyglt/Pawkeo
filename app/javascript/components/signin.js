@@ -7,16 +7,9 @@ if (start) {
     card.classList.add('display');
   });
 }
-  
+
 if (leave) {
   leave.addEventListener('click', () => {
     card.classList.remove('display');
-  });
-}
-
-const submitBtn = document.getElementById("btn-login");
-if (submitBtn) {
-  submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
   });
 }
