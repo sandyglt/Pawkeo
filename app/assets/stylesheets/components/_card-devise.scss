@@ -9,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 800;
   transform: translateY(100%);
   transition: all 0.3s ease-in-out;
 
@@ -29,7 +29,6 @@
     color: white;
     position: absolute;
     right:15px;
-
   }
 }
 
