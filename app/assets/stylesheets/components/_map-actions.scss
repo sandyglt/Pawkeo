@@ -7,9 +7,12 @@
   height: 40px;
   justify-content: space-around;
   align-items: center;
-  color: $dark-blue;
-  font-size: 40px;
+  // color: $dark-blue;
+  // font-size: 40px;
   transform: translateX(-50%);
+  img {
+    width: 48px;
+  }
 }
 
 .toggle-park {
