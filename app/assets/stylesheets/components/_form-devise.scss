@@ -11,6 +11,7 @@
     border: none;
     border-bottom: 2px solid white;
     overflow: hidden;
+    color: white;
 }
 
 .form-actions {
@@ -19,7 +20,7 @@
   width: 60px;
   margin: auto;
 .btn {
-  color: white;
+  color: white !important;
   font-size: 12px;
 }
 }
@@ -27,3 +28,7 @@
 #user_remember_me {
     width: 10px;
   }
+
+#new_user {
+  flex-direction: column;
+}
