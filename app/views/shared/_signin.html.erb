@@ -33,7 +33,28 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", id: "btn-login"%>
+          <%= f.button :submit, "Log in", id: "btn-login", data: {target: "#exampleModal", toggle: "modal"}%>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Hi, <%#= @user.first_name  %> !</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+        <p>What do you want to do?</p>
+        <%= link_to "Find a spot around me", spot_searches_path %>
+        <br>
+        <%= link_to "Enter my destination", spot_searches_path %>
+        <br>
+        <%= link_to "Pawk! I found a free spot", spot_searches_path %>
+              </div>
+          </div>
         </div>
       <% end %>
       <div class="pt-2">
