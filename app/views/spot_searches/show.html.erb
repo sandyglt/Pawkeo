@@ -16,7 +16,12 @@
     <%= image_tag("near-me.svg") %>
   </div>
   <%= render 'menu_open'%>
-  <div class="address-form">
-    <%= render 'form', address: @address %>
+  <div id="address-form">
+    <div class="d-flex justify-content-end">
+      <button type="button" id="close-address">X</button>
+    </div>
+    <div id="address-form-body">
+      <%= render 'form', address: @address %>
+    </div>
   </div>
 </div>

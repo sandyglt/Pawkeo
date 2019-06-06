@@ -1,5 +1,5 @@
 function refreshForm(innerHTML) {
-  const newAddressForm = document.querySelector('.address-form');
+  const newAddressForm = document.querySelector('#address-form-body');
   newAddressForm.innerHTML = innerHTML;
 }
 
@@ -8,20 +8,30 @@ function addAddress(addressHTML) {
   addresses.insertAdjacentHTML('beforeend', addressHTML);
 }
 
-function closeModal() {
- document.querySelector('.close').click();
+function closeForm() {
+ document.getElementById('close-address').click();
 }
 
-function openModal() {
-  document.getElementById('ModalAddressButton').click();
+function autocomplete() {
+  const flatAddresses = document.querySelectorAll('.autocomplete');
+  if (flatAddresses.length > 0) {
+    flatAddresses.forEach((flatAddress) => {
+      const autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: [ 'geocode' ] });
+      google.maps.event.addDomListener(flatAddress, 'keydown', function(e) {
+        if (e.key === "Enter") {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    });
+  }
 }
 
-closeModal();
 <% if @address.errors.any? %>
   refreshForm('<%= j render "spot_searches/form", address: @address %>');
-  openModal();
 <% else %>
+  closeForm();
   addAddress('<%= j render "spot_searches/address", address: @address %>');
   refreshForm('<%= j render "spot_searches/form", address: Address.new %>');
 <% end %>
+autocomplete();
 
