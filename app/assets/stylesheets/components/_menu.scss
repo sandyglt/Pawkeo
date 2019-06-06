@@ -2,6 +2,17 @@
   position: absolute;
   top: 0px;
   z-index: 2;
-  background-color: white;
-  // transition: visibility ease-in-out 1s;
+  background-color: rgba(0,0,0,0.1);
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: all .3s ease-in-out;
+
+  .menu-content {
+    position: absolute;
+    height: 100%;
+    width: 260px;
+    top: 0;
+    background: white;
+  }
 }

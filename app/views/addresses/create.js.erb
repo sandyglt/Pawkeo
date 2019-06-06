@@ -8,18 +8,18 @@ function addAddress(addressHTML) {
   addresses.insertAdjacentHTML('beforeend', addressHTML);
 }
 
-function closeModal() {
+function closeForm() {
  document.querySelector('.close').click();
 }
 
-function openModal() {
-  document.getElementById('ModalAddressButton').click();
+function openForm() {
+  document.getElementById('.btn-addresses').click();
 }
 
-closeModal();
+closeForm();
 <% if @address.errors.any? %>
   refreshForm('<%= j render "spot_searches/form", address: @address %>');
-  openModal();
+  openForm();
 <% else %>
   addAddress('<%= j render "spot_searches/address", address: @address %>');
   refreshForm('<%= j render "spot_searches/form", address: Address.new %>');

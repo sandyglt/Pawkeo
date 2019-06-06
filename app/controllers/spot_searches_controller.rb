@@ -15,5 +15,4 @@ class SpotSearchesController < ApplicationController
 
   def create
   end
-
 end

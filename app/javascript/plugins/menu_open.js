@@ -1,9 +1,9 @@
 const Hide = (menuglobal) => {
- document.getElementById(menuglobal).style.visibility = "hidden";
+ document.getElementById(menuglobal).style.transform = "translateX(-100%)";
 };
 
 const Show = (menuglobal) => {
- document.getElementById(menuglobal).style.visibility = "visible";
+ document.getElementById(menuglobal).style.transform = "translateX(0)";
 };
 
 const toggle = (menuglobal) => {
