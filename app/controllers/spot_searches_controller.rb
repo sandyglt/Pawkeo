@@ -14,6 +14,8 @@ class SpotSearchesController < ApplicationController
   end
 
   def create
+    @spot_search = SpotSearch.new(spot_search_params)
+    raise
   end
 
   def update
