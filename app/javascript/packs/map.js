@@ -183,15 +183,15 @@ if (mapElement) {
     new google.maps.Marker({ position: new google.maps.LatLng(marker.lat, marker.lng), icon: image, map: map });
   });
   
-  const car = {
-    url: 'https://png.pngtree.com/svg/20170825/fca5fbda9c.svg',
+  const dot = {
+    url: 'https://upload.wikimedia.org/wikipedia/commons/d/da/White_dot.svg',
     // size: new google.maps.Size(64, 64),
     origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(96, 96)
+    anchor: new google.maps.Point(0, 0),
+    scaledSize: new google.maps.Size(16, 16)
   };
   
-  const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: car, map: map });
+  const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });
 
   if (navigator.geolocation) { 
     navigator.geolocation.watchPosition(function(position) {
