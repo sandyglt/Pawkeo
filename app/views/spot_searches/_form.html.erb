@@ -1,30 +1,15 @@
-<!-- Modal -->
-<div class="modal fade" id="ModalAddress" tabindex="-1" role="dialog" aria-labelledby="ModalAddressLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalFavoriteAddress">My new favorite address</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for(address, remote: true) do |form| %>
-          <%= form.input :name %>
-          <%= form.input :address, input_html: { class: "autocomplete" } %>
-          <%= form.button :submit %>
+<%= simple_form_for(address, remote: true) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :address, input_html: { class: "autocomplete" } %>
+  <%= form.button :submit %>
 
-          <% if address.errors.any? %>
-            <div class="errors-container">
-              <ul>
-                <% address.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
+  <% if address.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
-      </div>
+      </ul>
     </div>
-  </div>
-</div>
+  <% end %>
+<% end %>
