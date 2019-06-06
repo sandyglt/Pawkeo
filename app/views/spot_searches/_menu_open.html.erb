@@ -1,24 +1,24 @@
-<div class="menu" id="menuglobal">
-  <div class="menu-content">
-    <div class="menu-header">
-    </div>
-    <div class="avatar">
-    </div>
+<div class="menu-container">
+  <div class="menu" id="menuglobal">
     <div class="menu-content">
-      <div class="cars">
+      <div class="menu-header">
       </div>
-      <div class="addresses">
-        <ul id="address-list">
-          <%@myaddresses.each do |address| %>
-            <%= render 'address', address: address%>
-          <% end %>
-        </ul>
+      <div class="avatar">
       </div>
-      <button type="button" class="btn-addresses">
-        Bouton envoi du formulaire
-      </button>
-    </div>
-    <div class="menu-footer">
+        <div class="cars">
+        </div>
+        <div class="addresses">
+          <ul id="address-list">
+            <%@myaddresses.each do |address| %>
+              <%= render 'address', address: address%>
+            <% end %>
+          </ul>
+        </div>
+        <button type="button" class="btn-addresses">
+        Create an address
+        </button>
+      <div class="menu-footer">
+      </div>
     </div>
   </div>
 </div>
