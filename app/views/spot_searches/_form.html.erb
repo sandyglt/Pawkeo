@@ -1,19 +1,15 @@
-<button type="button" class="close" aria-label="Close"></button>
+<%= simple_form_for(address, remote: true) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :address, input_html: { class: "autocomplete" } %>
+  <%= form.button :submit %>
 
-<div class="body">
-  <%= simple_form_for(address, remote: true) do |form| %>
-    <%= form.input :name %>
-    <%= form.input :address, input_html: { class: "autocomplete" } %>
-    <%= form.button :submit %>
-
-    <% if address.errors.any? %>
-      <div class="errors-container">
-        <ul>
-          <% address.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% if address.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-</div>
+<% end %>

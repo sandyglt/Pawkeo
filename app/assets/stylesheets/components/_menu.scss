@@ -16,3 +16,12 @@
     background: white;
   }
 }
+#address-form {
+  background-color: grey;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform .3s ease-in-out;
+  z-index: 3;
+}
