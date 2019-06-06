@@ -23,7 +23,7 @@ class SpotSearchesController < ApplicationController
   private
 
   def search_params
-    params.require(:spot_search).permit(:dest_lat, :dest_lng, :search_address)
+    params.require(:spot_search).permit(:dest_lat, :dest_lng)
   end
 
   def update_by_search
@@ -33,6 +33,10 @@ class SpotSearchesController < ApplicationController
     search_coordinates = results.first.coordinates
     @spot_search.dest_lat = search_coordinates.first
     @spot_search.dest_lng = search_coordinates.last
-    @spot_search.update(search_params)
+    if @spot_search.update(search_params)
+      redirect_to spot_search_path(@spot_search)
+    else
+      render :show
+    end
   end
 end
