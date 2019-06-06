@@ -16,4 +16,23 @@ class SpotSearchesController < ApplicationController
   def create
   end
 
+  def update
+    update_by_search
+  end
+
+  private
+
+  def search_params
+    params.require(:spot_search).permit(:dest_lat, :dest_lng, :search_address)
+  end
+
+  def update_by_search
+    @spot_search = SpotSearch.find(params[:id])
+    search_address = params[:spot_search].values.last
+    results = Geocoder.search(search_address)
+    search_coordinates = results.first.coordinates
+    @spot_search.dest_lat = search_coordinates.first
+    @spot_search.dest_lng = search_coordinates.last
+    @spot_search.update(search_params)
+  end
 end
