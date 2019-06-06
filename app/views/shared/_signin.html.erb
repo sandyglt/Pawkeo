@@ -35,7 +35,9 @@
         <div class="form-actions">
           <%= f.button :submit, "Log in", id: "btn-login", data: {target: "#exampleModal", toggle: "modal"}%>
         </div>
-
+      <div class="pt-2">
+        <%= render "devise/shared/links" %>
+      </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -48,18 +50,15 @@
               </div>
               <div class="modal-body">
         <p>What do you want to do?</p>
-        <%= link_to "Find a spot around me", spot_searches_path %>
+        <%= link_to "Find a spot around me", "/spot_searches/1" %>
         <br>
-        <%= link_to "Enter my destination", spot_searches_path %>
+        <%= link_to "Enter my destination", "/spot_searches/1" %>
         <br>
-        <%= link_to "Pawk! I found a free spot", spot_searches_path %>
+        <%= link_to "Pawk! I found a free spot", "/spot_searches/1" %>
               </div>
           </div>
         </div>
       <% end %>
-      <div class="pt-2">
-        <%= render "devise/shared/links" %>
-      </div>
     </div>
   </div>
 
