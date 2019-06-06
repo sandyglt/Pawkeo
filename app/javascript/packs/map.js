@@ -166,8 +166,22 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       ]
     }
   ] });
+  const image = {
+    url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559813309/mini-pin_gnqp3e.svg',
+    size: new google.maps.Size(71, 71),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(32, 32)
+  };
   const markers = JSON.parse(mapElement.dataset.markers);
-  map.addMarkers(markers);
+  markers.forEach((marker) => {
+    map.addMarker({
+      icon: image,
+      lat: marker.lat,
+      lng: marker.lng
+    });
+  });
+  
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
