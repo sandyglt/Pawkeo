@@ -1,4 +1,4 @@
 <%= simple_form_for @spot_search, defaults: { input_html: { class: 'inline' } } do |form| %>
   <%= form.input_field :search_address, class: "autocomplete" %>
-  <%= form.submit 'O', method: :update %>
+  <%= form.submit '', method: :update, class: "d-none" %>
 <% end %>
