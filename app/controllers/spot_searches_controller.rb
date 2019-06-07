@@ -18,6 +18,7 @@ class SpotSearchesController < ApplicationController
       }
     ]
     @markers = [@spot_markers, @destination_marker]
+    @user = current_user
   end
 
   def create

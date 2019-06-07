@@ -2,7 +2,7 @@
   <div class="menu" id="menuglobal">
     <div class="menu-content">
       <div class="menu-header">
-        <h2 id="menu-title" class="txt-gradient-blue">Welcome Julie<%#= User.first_name %>!</h2>
+        <h2 id="menu-title" class="txt-gradient-blue">Welcome, <%= @user.first_name %>!</h2>
       </div>
       <div>
         <%= image_tag "avatar.jpg", class: "avatar" %>
