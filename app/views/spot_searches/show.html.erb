@@ -23,6 +23,11 @@
   </div>
   <div class="pawk-now">
     <%= image_tag("pawk-now.png") %>
+    <%= simple_form_for(Spot.new, html: { class: "hidden-form d-none"}, remote: true) do |f| %>
+      <%= f.input :lat %>
+      <%= f.input :lng %>
+      <%= f.submit %>
+    <% end %>
   </div>
   <%= render 'menu_open'%>
   <div id="address-form">
