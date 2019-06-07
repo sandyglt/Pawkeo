@@ -4,7 +4,7 @@
       <div class="menu-header">
         <h2 id="menu-title" class="txt-gradient-blue">Welcome Julie<%#= User.first_name %>!</h2>
       </div>
-      <div style="margin-left: 20px">
+      <div>
         <%= image_tag "avatar.jpg", class: "avatar" %>
       </div>
       <div class="container-user-info flex-row-center" style="overflow: scroll;">
@@ -27,21 +27,21 @@
         <div class="addresses">
             <h2 id="menu-category">My favorite addresses</h2>
             <div class="card-addresses">
-                <div class="card-addresses-infos d-flex">
+                <div class="card-addresses-infos">
+                  <i class="fas fa-home"></i>
                   <div>
                     <h2>Home</h2>
                     <p>28 rue des Lilas, 75011 Paris</p>
                   </div>
-                  <i class="fas fa-home"></i>
                 </div>
             </div>
             <div class="card-addresses">
-              <div class="card-addresses-infos d-flex">
+              <div class="card-addresses-infos">
+                  <i class="fas fa-briefcase"></i>
                   <div>
                     <h2>Work</h2>
                     <p>41 rue des Bleuets,92240 Malakoff</p>
                   </div>
-                  <i class="fas fa-briefcase"></i>
               </div>
             </div>
             <div class="new-address">
