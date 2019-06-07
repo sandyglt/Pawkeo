@@ -2,21 +2,51 @@
   <div class="menu" id="menuglobal">
     <div class="menu-content">
       <div class="menu-header">
+        <h2 class="txt-gradient-blue">Welcome <%= User.name %>!</h2>
       </div>
       <div class="avatar">
+        <img src="avatar.jpg">
       </div>
+      <div class="container-user-infos d-flex flex-row-center">
         <div class="cars">
+          <h2>My cars</h2>
+          <div class="card-cars">
+            <div class="card-cars-infos">
+              <i class="fas fa-car"></i><h2>Twingo</h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+          </div>
+        </div>
+        <div class="profile">
+          <h2>My profile</h2>
         </div>
         <div class="addresses">
-          <ul id="address-list">
-            <%@myaddresses.each do |address| %>
-              <%= render 'address', address: address%>
-            <% end %>
-          </ul>
+            <h2>My favorite addresses</h2>
+            <div class="card-addresses">
+                <div class="card-addresses-infos">
+                  <i class="fas fa-home"></i> <h2>Home</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+            <div class="card-addresses">
+              <div class="card-addresses-infos">
+                  <i class="fas fa-briefcase"></i><h2>Work</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+            <div class="new-address">
+              <div class="card-addresses">
+                <ul id="address-list">
+                  <%@myaddresses.each do |address| %>
+                    <%= render 'address', address: address%>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
         </div>
         <button type="button" class="btn-addresses">
         Create an address
         </button>
+      </div>
       <div class="menu-footer">
       </div>
     </div>

@@ -14,7 +14,6 @@
     width: 50%;
     top: 0;
     background: white;
-    border-radius: 60px 60px 60px 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
   }
 }
@@ -26,7 +25,6 @@
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
   z-index: 3;
-  border-radius: 60px 60px 60px 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
   // ATTENTION : ne rien changer (sauf charte graphique) dans #address-form code nécessaire pour faire fontionner le systeme d'animations
 
