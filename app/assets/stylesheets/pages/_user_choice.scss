@@ -9,13 +9,18 @@
 .buttons {
   position: absolute;
   top: 260px;
-  left: 130px;
+  left: 94px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   text-align: center;
   img {
     height: 80px;
+  }
+  #search-bar {
+    img {
+      height: 30px;
+    }
   }
   span {
     padding-top: 5px;
