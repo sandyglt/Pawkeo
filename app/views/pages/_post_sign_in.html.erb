@@ -1,0 +1,24 @@
+<% if user_signed_in? %>
+  <div class="modal bg-blue fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel"> Hi, <%= current_user.first_name  %> !</h1>
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"> <i class="fas fa-times"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>What do you want to do?</p>
+          <%= link_to "Find a spot around me", "/spot_searches/1" %>
+          <br>
+          <%= link_to "Enter my destination", "/spot_searches/1" %>
+          <br>
+          <%= link_to "Pawk! I found a free spot", '#', class: "pawk"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
