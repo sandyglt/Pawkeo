@@ -1,13 +1,13 @@
 .card-addresses {
-  overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
+  margin-bottom:20px;
+  border-radius:14px;
 }
 .card-addresses h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
@@ -22,4 +22,8 @@
 
 .card-addresses .card-addresses-infos {
   padding: 16px;
+  align-items: center;
+    i{
+    font-size: 15px;
+  }
 }

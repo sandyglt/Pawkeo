@@ -7,7 +7,8 @@
   width: 100%;
   transform: translateX(-100%);
   transition: all .3s ease-in-out;
-  // ATTENTION : ne rien changer (sauf charte graphique)dans #menuglobal code nécessaire pour faire fontionner le systeme d'animation
+  text-align:center;
+
   .menu-content {
     position: absolute;
     height: 100%;
@@ -26,9 +27,7 @@
   transition: transform .3s ease-in-out;
   z-index: 3;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  // ATTENTION : ne rien changer (sauf charte graphique) dans #address-form code nécessaire pour faire fontionner le systeme d'animations
 
-//input du form :
   .form-data {
     input {
         margin: 0 auto;
@@ -36,7 +35,7 @@
     }
   }
 
-//bouton submit du form
+
   .form-submit{
     background-image: linear-gradient(to bottom, $purple, #a52775);
     border-radius: 50px;
@@ -78,4 +77,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#menu-category{
+  font-size:15px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+#menu-title{
+  font-size:27px;
+}
+
+.btn-addresses{
+  text-align: center;
+  cursor: default;
+  color: white !important;
+  background-color: $dark-blue !important;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 0px !important;
+  border-style: none !important;
+  border-color: none !important;
+  border-image: none !important;
+  border-radius: 12px;
+  align-items: center;
+  margin-bottom:20px;
+}
+
+.addresses{
+  padding:10px;
+  margin-bottom:20px;
+
+}
+
+.menu-footer{
+  align-items:center;
+  margin-bottom:20px;
+
+}
+
+.menu-header{
+  margin-top:20px;
 }
