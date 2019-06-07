@@ -4,7 +4,7 @@ const mapElement = document.getElementById('map');
 if (mapElement) {
   const map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 48.864848, lng: 2.379853},
-    zoom: 8,
+    zoom: 16,
     disableDefaultUI: true,
     styles: [
       {

@@ -3,6 +3,23 @@
   z-index: 2;
   left: 88%;
   bottom: 32px;
+  width: 64px;
+  height: 64px;
+  justify-content: space-around;
+  align-items: center;
+  // color: $dark-blue;
+  // font-size: 40px;
+  transform: translateX(-50%);
+  img {
+    width: 64px;
+  }
+}
+
+.pawk-now {
+  position: absolute;
+  z-index: 2;
+  left: 12%;
+  bottom: 36px;
   width: 56px;
   height: 56px;
   justify-content: space-around;
