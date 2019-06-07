@@ -5,12 +5,19 @@ class SpotSearchesController < ApplicationController
     session[:spot_search_id] = @spot_search.id
     @myaddresses = Address.where(user: current_user).last(1).reverse
     @spots = Spot.where.not(lat: nil, lng: nil, used: true)
-    @markers = @spots.map do |spot|
+    @spot_markers = @spots.map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng
       }
     end
+    @destination_marker = [
+      {
+        lat: @spot_search.dest_lat,
+        lng: @spot_search.dest_lng
+      }
+    ]
+    @markers = [@spot_markers, @destination_marker]
   end
 
   def create
