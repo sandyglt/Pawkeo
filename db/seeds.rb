@@ -11,6 +11,8 @@ User.create!(
   email: "test@pawkeo.com",
   password: 'testpawkeo',
   password_confirmation: 'testpawkeo',
+  first_name: 'Guillaume',
+  last_name: 'Casile'
 )
 
 puts "SpotSearch seed creation"
@@ -18,7 +20,7 @@ SpotSearch.create!(
   start_time: Date.new,
   orig_lat: 48.8649,
   orig_lng: 2.3800699999999324,
-  dest_lat: 48.8649,
+  dest_lat: 47.9999,
   dest_lng: 2.3800699999999324,
   user_id: User.last[:id],
 )
