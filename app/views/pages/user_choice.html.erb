@@ -1,0 +1,25 @@
+<div class="container bg-blue min-height-100vh p-0">
+
+<%= image_tag("pawkeo.svg", id:"logo") %>
+
+  <div class="titles">
+    <h1 > Hi, <%= current_user.first_name %> !</h1>
+    <br>
+    <h2>What do you want to do?</h2>
+    <br>
+  </div>
+
+  <div class="buttons">
+    <%= link_to image_tag("around-me.png"), "/spot_searches/1" %>
+    <span>Around me</span>
+    <br>
+    <br>
+    <%= link_to "#", "/spot_searches/1" %>
+    <span>Enter a destination</span>
+    <br>
+    <br>
+    <%= link_to image_tag("pawk-now.png"), '#', class: "pawk"  %>
+    <span>Pawk a spot</span>
+  </div>
+
+</div>

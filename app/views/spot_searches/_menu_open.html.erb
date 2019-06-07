@@ -1,24 +1,66 @@
-<div class="menu" id="menuglobal">
-  <div class="menu-content">
-    <div class="menu-header">
-    </div>
-    <div class="avatar">
-    </div>
+<div class="menu-container">
+  <div class="menu" id="menuglobal">
     <div class="menu-content">
-      <div class="cars">
+      <div class="menu-header">
+        <h2 id="menu-title" class="txt-gradient-blue">Welcome, <%= @user.first_name %>!</h2>
       </div>
-      <div class="addresses">
-        <ul id="address-list">
-          <%@myaddresses.each do |address| %>
-            <%= render 'address', address: address%>
-          <% end %>
-        </ul>
+      <div>
+        <%= image_tag "avatar.jpg", class: "avatar" %>
       </div>
-      <button type="button" class="btn-addresses">
-        Bouton envoi du formulaire
-      </button>
-    </div>
-    <div class="menu-footer">
+      <div class="container-user-info flex-row-center" style="overflow: scroll;">
+       <!--  <div class="profile">
+          <h2>My profile</h2>
+        </div> -->
+       <!--  <div class="cars">
+          <h2>My cars</h2>
+          <div class="card-cars">
+            <div class="card-cars-infos d-flex">
+              <div>
+                <h2>Twingo</h2>
+                <p>Product description</p>
+              </div>
+              <i class="fas fa-car"></i>
+            </div>
+          </div>
+        </div>
+ -->
+        <div class="addresses">
+            <h2 id="menu-category">My favorite addresses</h2>
+            <div class="card-addresses">
+                <div class="card-addresses-infos">
+                  <i class="fas fa-home"></i>
+                  <div>
+                    <h2>Home</h2>
+                    <p>28 rue des Lilas, 75011 Paris</p>
+                  </div>
+                </div>
+            </div>
+            <div class="card-addresses">
+              <div class="card-addresses-infos">
+                  <i class="fas fa-briefcase"></i>
+                  <div>
+                    <h2>Work</h2>
+                    <p>41 rue des Bleuets,92240 Malakoff</p>
+                  </div>
+              </div>
+            </div>
+            <div class="new-address">
+                <% @myaddresses.each do |address| %>
+                    <%= render 'address', address: address%>
+                <% end %>
+            </div>
+        </div>
+      </div>
+      <div class="menu-footer">
+        <button type="button"class="btn-addresses">
+          Create an address
+        </button>
+        <div>
+          <div class="deconnexion ">
+            <%= link_to 'Sign-out', destroy_user_session_path,  method: :delete %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
