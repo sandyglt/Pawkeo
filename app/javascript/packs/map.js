@@ -192,7 +192,6 @@ if (mapElement) {
   markers[1].forEach((destination) => {
     new google.maps.Marker({ position: new google.maps.LatLng(destination.lat, destination.lng), icon: dotdest, map: map });
   });
-  console.log(markers[1])
 
   const dot = {
     url: 'https://upload.wikimedia.org/wikipedia/commons/d/da/White_dot.svg',
