@@ -25,9 +25,9 @@
     <%= image_tag("pawk-now.png") %>
   </div>
   <%= render 'menu_open'%>
-  <div id="address-form">
+  <div id="address-form" class="p-0 overflow-hidden bg-blue">
     <div class="d-flex justify-content-end">
-      <button type="button" id="close-address">X</button>
+      <button type="button" id="close-address"><i class="fas fa-times"></i></button>
     </div>
     <div id="address-form-body">
       <%= render 'form', address: @address %>
