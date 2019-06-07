@@ -3,7 +3,7 @@ class SpotSearchesController < ApplicationController
     @spot_search = SpotSearch.find(params[:id])
     @address = Address.new
     session[:spot_search_id] = @spot_search.id
-    @myaddresses = Address.where(user: current_user).last(3).reverse
+    @myaddresses = Address.where(user: current_user).last(1).reverse
     @spots = Spot.where.not(lat: nil, lng: nil, used: true)
     @markers = @spots.map do |spot|
       {
