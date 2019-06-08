@@ -1,4 +1,4 @@
-const mapElement = document.getElementById('map');
+console.log('Marker creation...');
 
 const image = {
   url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559813309/mini-pin_gnqp3e.svg',
@@ -8,6 +8,6 @@ const image = {
   scaledSize: new google.maps.Size(32, 32)
 };
 
-new google.maps.Marker({ position: new google.maps.LatLng(<%= @spot.lat %>, <%= @spot.lat %>), icon: image });
+new google.maps.Marker({ position: new google.maps.LatLng(<%= @spot.lat %>, <%= @spot.lng %>), icon: image });
 
-console.log('marker inserted');
+console.log('Marker inserted!');
