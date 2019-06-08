@@ -20,10 +20,15 @@
   </div>
   <div class="around-me">
     <%= image_tag("around-me.png") %>
+    <%= simple_form_for([@spot_search, Spot.new], html: { class: "hidden-form-around d-none" }, url: spot_search_spots_around_path(@spot_search), method: :post) do |f| %>
+      <%= f.input :lat, input_html: { id: 'spot_latitude' } %>
+      <%= f.input :lng, input_html: { id: 'spot_longitude' } %>
+      <%= f.submit %>
+    <% end %>
   </div>
   <div class="pawk-now">
     <%= image_tag("pawk-now.png") %>
-    <%= simple_form_for(Spot.new, html: { class: "hidden-form d-none"}, remote: true) do |f| %>
+    <%= simple_form_for(Spot.new, html: { class: "hidden-form-pawk d-none" }, remote: true) do |f| %>
       <%= f.input :lat %>
       <%= f.input :lng %>
       <%= f.submit %>
