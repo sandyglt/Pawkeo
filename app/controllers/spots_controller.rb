@@ -10,11 +10,12 @@ class SpotsController < ApplicationController
   end
 
   def around
-    @spots = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.1, units: :km).limit(3)
-    @waypoints = Array.new
-    @spots.each do |spot|
-      @waypoints << "#{spot.lat}%2C#{spot.lng}"
+    @spots = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km).limit(3)
+    @waypoints = @spots.map do |spot|
+      {
+        lat: spot.lat,
+        lng: spot.lng
+      }
     end
-    raise
   end
 end
