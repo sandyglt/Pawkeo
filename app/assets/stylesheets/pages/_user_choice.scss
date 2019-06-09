@@ -1,19 +1,15 @@
 .titles {
-  position: absolute;
-  top: 80px;
   text-align: center;
   color: white;
-  padding: 15px;
+  padding: 16px;
 }
 
 .buttons {
-  position: absolute;
-  top: 260px;
-  left: 94px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   text-align: center;
+  padding: 16px;
   transform: translateX();
   img {
     height: 80px;
