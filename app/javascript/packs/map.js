@@ -347,7 +347,7 @@ if (mapElement) {
     scaledSize: new google.maps.Size(32, 32)
   };
   const dotdest = {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Green_dot.svg',
+    url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/blue-dot_mzdar3.svg',
     // size: new google.maps.Size(64, 64),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 0),
@@ -362,7 +362,7 @@ if (mapElement) {
   });
 
   const dot = {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/d/da/White_dot.svg',
+    url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/white-dot_lw69js.svg',
     // size: new google.maps.Size(64, 64),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(0, 0),
