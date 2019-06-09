@@ -39,11 +39,12 @@
   .form-submit{
     background-image: linear-gradient(to bottom, $purple, #a52775);
     border-radius: 50px;
-    width:100%;
-    margin: auto;
+    width:60%;
+    margin: 32px auto;
     .btn {
       color: white;
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: bold; 
     }
   }
 }
