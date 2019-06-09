@@ -1,7 +1,7 @@
 .card-login {
   background-color: $dark-blue;
   font-size: 16px;
-  padding: 15px;
+  padding: 16px;
   width: 100%;
   height: 100%;
   border-radius: 60px 60px 60px 10px;
@@ -19,11 +19,11 @@
   }
   span {
     color: white;
-    font-size: 12px;
+    font-size: 16px;
   }
   a {
     color: $light-blue;
-    font-size: 12px;
+    font-size: 16px;
   }
   i {
     color: white;
@@ -36,3 +36,20 @@
   transform: translateY(0);
 }
 
+.card-signup {
+  background-color: $dark-blue;
+  font-size: 16px;
+  padding: 16px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  h2 {
+    padding: 20px;
+    font-size: 32px;
+    text-align: center;
+  }
+  a {
+    color: $light-blue;
+    font-size: 16px;
+  }
+}
