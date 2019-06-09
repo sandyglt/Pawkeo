@@ -12,7 +12,7 @@
   .menu-content {
     position: absolute;
     height: 100%;
-    width: 60%;
+    width: 70%;
     top: 0;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
@@ -52,7 +52,6 @@
   z-index: 1000;
   margin-top: 30px;
   margin-right: 20px;
-  //
   align-items: flex-start;
   text-align: center;
   cursor: default;
@@ -80,9 +79,9 @@
 }
 
 #menu-category{
-  font-size:15px;
-  margin-bottom:24px;
-  margin-top:12px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 #menu-title{
@@ -95,14 +94,16 @@
   color: white !important;
   background-color: $dark-blue !important;
   box-sizing: border-box;
-  padding: 2px 6px 3px;
+  padding: 6px 12px;
   border-width: 0px !important;
   border-style: none !important;
   border-color: none !important;
   border-image: none !important;
-  border-radius: 12px;
+  border-radius: 50px;
   align-items: center;
-  margin-bottom:20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .addresses{
