@@ -10,6 +10,7 @@ class SpotsController < ApplicationController
   end
 
   def around
+    @spot_search = SpotSearch.find(params[:spot_search_id])
     @spots = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km).limit(3)
     @waypoints = @spots.map do |spot|
       {
