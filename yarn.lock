@@ -948,6 +948,11 @@ ajv@^6.1.0, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+alert@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/alert/-/alert-1.0.0.tgz#0d589fc17b4e6014f519e73311f5414c8738ee6a"
+  integrity sha1-DVifwXtOYBT1GeczEfVBTIc47mo=
+
 alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
@@ -6451,6 +6456,11 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweet@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/sweet/-/sweet-0.1.1.tgz#19e2abacc413a1457cc54b433d400d46d6c4869d"
+  integrity sha1-GeKrrMQToUV8xUtDPUANRtbEhp0=
 
 sweetalert@^2.1.2:
   version "2.1.2"
