@@ -1,5 +1,5 @@
 <%- if !['sessions', 'pages'].include?(controller_name) %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "Go back", new_session_path(resource_name) %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
