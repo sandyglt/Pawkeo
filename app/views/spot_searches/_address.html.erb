@@ -6,8 +6,9 @@
       <p><%= address.address %></p>
     </div>
     <i id="sweet-alert-demo"class="fas fa-trash-alt"></i>
-    <%= link_to address_path(address), :data => {:confirm => 'Are you sure?'}, method: :delete, remote: true, id: "delete-link", class: "trashy" do %>
+    <%= link_to address_path(address), method: :delete, remote: true, id: "delete-link", class: "trashy" do %>
     <% end %>
   </div>
 </div>
+
 

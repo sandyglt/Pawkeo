@@ -18,5 +18,8 @@ initSweetalert('#sweet-alert-demo', {
   text: "Are you sure ?",
   icon: "success"
 }, (value) => {
-  console.log(value);
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
 });
