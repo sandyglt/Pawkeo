@@ -2,6 +2,8 @@
 import { autocomplete } from '../components/autocomplete';
 import { sendLocation } from '../components/pawk_now';
 import { loopItinerary } from '../components/around_me';
+import { parkLocation } from '../components/toggle_spot';
+
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -376,15 +378,15 @@ if (mapElement) {
 
     sendLocation(map);
     loopItinerary(map);
+    parkLocation(map);
 
-    
-    
+
     // // function calcRoute() {
     //     navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
     //     //The working next statement.
     //     navigator.geolocation.getCurrentPosition(function (position) {
     //     //Your code here
-        
+
     //     }, function (e) {
     //     //Your error handling here
     //     alert("Sorry, browser does not support geolocation!");

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'user_choice', to: 'pages#user_choice', as: :user_choice
   resources :spot_searches, only: [ :show, :create, :update ] do
     post 'spots/around', to: 'spots#around', as: :spots_around
+    post 'spots/destroy_cloud', to: 'spots#destroy_cloud', as: :destroy_cloud
   end
   resources :spots, only: [ :create, :update ]
   resources :addresses, only: [:create, :destroy]
