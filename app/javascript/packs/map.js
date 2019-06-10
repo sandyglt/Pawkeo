@@ -380,17 +380,18 @@ if (mapElement) {
     
     
     // // function calcRoute() {
-    //     navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-    //     //The working next statement.
-    //     navigator.geolocation.getCurrentPosition(function (position) {
-    //     //Your code here
-        
-    //     }, function (e) {
-    //     //Your error handling here
-    //     alert("Sorry, browser does not support geolocation!");
-    //     }, {
-    //     enableHighAccuracy: true
-    //     });
+        navigator.geolocation.watchPosition(function () {}, function () {}, {});
+        //The working next statement.
+        navigator.geolocation.watchPosition(function (position) {
+        //Your code here
+        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        }, function (e) {
+        //Your error handling here
+        alert("Sorry, browser does not support geolocation!");
+        }, {
+        enableHighAccuracy: true
+        });
     // // }
 };
 
