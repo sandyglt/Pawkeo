@@ -1,20 +1,25 @@
 function refreshForm(innerHTML) {
   const newAddressForm = document.querySelector('#address-form-body');
   newAddressForm.innerHTML = innerHTML;
+  console.log("refresh");
 }
 
 function removeAddress() {
   const lastAddress = document.querySelector('.addresses .new-address .card-addresses');
   lastAddress.remove();
+  console.log("remove");
 }
 
 function addAddress(addressHTML) {
   const addresses = document.querySelector('.addresses .new-address');
   addresses.insertAdjacentHTML('beforeend', addressHTML);
+  console.log("add");
 }
+
 
 function closeForm() {
  document.getElementById('close-address').click();
+ console.log("close");
 }
 
 function autocomplete() {
@@ -46,9 +51,22 @@ function searchFav() {
       searchBar.submit();
     });
   }
+  console.log("searchfav");
 };
 
+const initSweetalert = (selector, options = {}, callback = () => {}) => {
+  const swalButton = document.querySelector(selector);
+  if (swalButton) { // protect other pages
+    swalButton.addEventListener('click', () => {
+      swal(options).then(callback); // <-- add the `.then(callback)`
+    });
+  }
+  console.log("sweetalert");
+};
+
+
 removeAddress();
+initSweetalert();
 closeForm();
 refreshForm('<%= j render "spot_searches/form", address: Address.new %>');
 autocomplete();

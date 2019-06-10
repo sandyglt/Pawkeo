@@ -27,8 +27,7 @@ class AddressesController < ApplicationController
       end
       format.js
     end
-
-  end
+end
 
   private
 
