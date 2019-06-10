@@ -9,3 +9,14 @@ import { searchFav } from "../components/search_fav";
 // sendLocation();
 loopItinerary();
 searchFav();
+
+//alertDeleteButton();
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Delete the address",
+  text: "Are you sure ?",
+  icon: "success"
+}, (value) => {
+  console.log(value);
+});

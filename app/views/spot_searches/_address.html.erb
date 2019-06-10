@@ -5,8 +5,9 @@
       <h2><%= address.name %></h2>
       <p><%= address.address %></p>
     </div>
+    <button id="sweet-alert-delete"><i class="fas fa-trash-alt"></i></button>
     <%= link_to address_path(address), :data => {:confirm => 'Are you sure?'}, method: :delete, remote: true, class: "trashy" do %>
-      <i class="fas fa-trash-alt"></i>
     <% end %>
   </div>
 </div>
+
