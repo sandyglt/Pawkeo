@@ -57,10 +57,3 @@ searchFav();
   addAddress('<%= j render "spot_searches/address", address: @last_address %>');
 <% end %>
 
-const Swal = require('sweetalert2')
-
-Swal.fire({
-  title: 'Are you sure ?',
-  confirmButtonText: 'Yes'
-})
-
