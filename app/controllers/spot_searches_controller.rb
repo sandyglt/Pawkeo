@@ -22,8 +22,18 @@ class SpotSearchesController < ApplicationController
   end
 
   def create
-    @spot_search = SpotSearch.new(spot_search_params)
-    raise
+    @spot_search = SpotSearch.new
+    @spot_search[:start_time] = Date.new
+    @spot_search[:orig_lng] = 48.8649
+    @spot_search[:orig_lat] = 2.3800699999999324
+    @spot_search[:dest_lng] = @spot_search[:orig_lng]
+    @spot_search[:dest_lat] = @spot_search[:orig_lat]
+    @spot_search[:user_id] = current_user[:id]
+    if@spot_search.save
+      redirect_to spot_search_path(@spot_search)
+    else
+      render :show
+    end
   end
 
   def update
