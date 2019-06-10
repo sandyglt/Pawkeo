@@ -1,4 +1,6 @@
+// import '../plugins/init_google';
 import { autocomplete } from '../components/autocomplete';
+import { sendLocation } from '../components/pawk_now';
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -370,6 +372,8 @@ if (mapElement) {
     };
 
     const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });
+
+    sendLocation(map);
 
     const directionsService = new google.maps.DirectionsService();
     const directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true, polylineOptions: { strokeColor: '#4becd9', strokeWeight: 8 } });
