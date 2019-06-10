@@ -45,10 +45,11 @@
               </div>
             </div>
             <div class="new-address">
-                <% @myaddresses.each do |address| %>
-                    <%= render 'address', address: address%>
-                <% end %>
+              <% if @myaddress %>
+                <%= render 'address', address: @myaddress %>
+              <% end %>
             </div>
+
         </div>
       </div>
       <div class="menu-footer">

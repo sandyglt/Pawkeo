@@ -5,9 +5,7 @@ function refreshForm(innerHTML) {
 
 function removeAddress() {
   const lastAddress = document.querySelector('.addresses .new-address .card-addresses');
-  if (lastAddress ) {
-    lastAddress.remove();
-  }
+  lastAddress.remove();
 }
 
 function addAddress(addressHTML) {
@@ -50,14 +48,19 @@ function searchFav() {
   }
 };
 
-<% if @address.errors.any? %>
-  refreshForm('<%= j render "spot_searches/form", address: @address %>');
-<% else %>
-  closeForm();
-  removeAddress();
-  addAddress('<%= j render "spot_searches/address", address: @address %>');
-  refreshForm('<%= j render "spot_searches/form", address: Address.new %>');
-<% end %>
+removeAddress();
+closeForm();
+refreshForm('<%= j render "spot_searches/form", address: Address.new %>');
 autocomplete();
-searchFav()
+searchFav();
+<% if @last_address %>
+  addAddress('<%= j render "spot_searches/address", address: @last_address %>');
+<% end %>
+
+const Swal = require('sweetalert2')
+
+Swal.fire({
+  title: 'Are you sure ?',
+  confirmButtonText: 'Yes'
+})
 
