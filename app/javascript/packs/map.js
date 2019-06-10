@@ -1,6 +1,7 @@
 // import '../plugins/init_google';
 import { autocomplete } from '../components/autocomplete';
 import { sendLocation } from '../components/pawk_now';
+import { loopItinerary } from '../components/around_me';
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -374,50 +375,23 @@ if (mapElement) {
     const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });
 
     sendLocation(map);
+    loopItinerary(map);
 
-    const directionsService = new google.maps.DirectionsService();
-    const directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true, polylineOptions: { strokeColor: '#4becd9', strokeWeight: 8 } });
-    directionsDisplay.setMap(map);
     
-    // function calcRoute() {
-        navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-        //The working next statement.
-        navigator.geolocation.getCurrentPosition(function (position) {
-        //Your code here
-        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-        const start = new google.maps.LatLng(lat, lng);
-        const end = new google.maps.LatLng(lat, lng);
-        const request = {
-            origin: start,
-            destination: end,
-            travelMode: 'DRIVING',
-            waypoints: [
-                {
-                    location: new google.maps.LatLng(48.863517, 2.366913),
-                    stopover: false
-                },
-                {
-                    location: new google.maps.LatLng(48.863630, 2.374377),
-                    stopover: false
-                }
-            ],
-            optimizeWaypoints: true,
-        };
-        directionsService.route(request, function(result, status) {
-            if (status == 'OK') {
-                directionsDisplay.setDirections(result);
-            }
-        });
-        }, function (e) {
-        //Your error handling here
-        alert("Sorry, browser does not support geolocation!");
-        }, {
-        enableHighAccuracy: true
-        });
-    // }
+    
+    // // function calcRoute() {
+    //     navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
+    //     //The working next statement.
+    //     navigator.geolocation.getCurrentPosition(function (position) {
+    //     //Your code here
+        
+    //     }, function (e) {
+    //     //Your error handling here
+    //     alert("Sorry, browser does not support geolocation!");
+    //     }, {
+    //     enableHighAccuracy: true
+    //     });
+    // // }
 };
 
 autocomplete();
