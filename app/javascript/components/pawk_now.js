@@ -12,7 +12,7 @@ const sendLocation = (map) => {
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(17, 34),
     scaledSize: new google.maps.Size(32, 32)
-};
+  };
   // console.log(spot_lat);
 
   pawk.addEventListener('click', (event) => {

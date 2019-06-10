@@ -18,5 +18,6 @@ class SpotsController < ApplicationController
         lng: spot.lng
       }
     end
+    render json: @waypoints
   end
 end
