@@ -1,12 +1,14 @@
 <div id="card-address" class="card-addresses">
-  <div class="card-addresses-infos d-flex">
-    <div class="text-center w-100 card-content" data-address="<%= address.address %>">
+  <div class="card-addresses-infos">
+    <div class="card-content" data-address="<%= address.address %>">
       <i class="fas fa-bookmark"></i>
+      <div class="address-content">
       <h2><%= address.name %></h2>
       <p><%= address.address %></p>
+      </div>
     </div>
-    <i id="sweet-alert-demo"class="fas fa-trash-alt"></i>
-    <%= link_to address_path(address), method: :delete, remote: true, id: "delete-link", class: "trashy" do %>
+    <i class="fas fa-trash-alt sweet-alert-demo"></i>
+    <%= link_to address_path(address), method: :delete, remote: true, class: "trashy delete-link" do %>
     <% end %>
   </div>
 </div>
