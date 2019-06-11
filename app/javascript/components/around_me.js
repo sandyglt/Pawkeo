@@ -22,6 +22,7 @@ const loopItinerary = (map) => {
       console.log('Current position finded!');
       // form.submit();
       const formData = new FormData(form);
+      console.log(formData);
       fetch(`/spot_searches/${spot_search.dataset.uid}/spots/around`,
         {
           method: 'post',
