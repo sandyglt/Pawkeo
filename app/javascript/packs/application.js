@@ -21,3 +21,7 @@ initSweetalert('#sweet-alert-demo', {
 });
 
 initSweetalert();
+
+// Needed to trigger sweetalert in create.js.erb
+// window.myLib = {};
+// myLib.alert = initSweetalert;
