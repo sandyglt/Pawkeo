@@ -1,10 +1,13 @@
 .card-addresses {
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   margin-bottom:20px;
   border-radius:14px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.5px;
+
 }
 .card-addresses h2 {
   font-size: 16px;
