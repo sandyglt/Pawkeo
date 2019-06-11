@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   def create
     @spot = Spot.new
+    @spot.freed_at = Time.new
     @spot.lng = params[:spot][:lng]
     @spot.lat = params[:spot][:lat]
     @spot.save
@@ -28,7 +29,7 @@ class SpotsController < ApplicationController
 
   def around
     @spot_search = SpotSearch.find(params[:spot_search_id])
-    @spots = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km).limit(3)
+    @spots = Spot.gathered_spots.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km).limit(3)
     @waypoints = @spots.map do |spot|
       {
         lat: spot.lat,
