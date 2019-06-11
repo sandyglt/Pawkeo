@@ -39,8 +39,7 @@ const loopItinerary = (map) => {
             const directionsService = new google.maps.DirectionsService();
             const directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true, polylineOptions: { strokeColor: '#4becd9', strokeWeight: 8 } });
             directionsDisplay.setMap(map);
-            // map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-            // marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+            
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             const start = new google.maps.LatLng(latitude, longitude);
