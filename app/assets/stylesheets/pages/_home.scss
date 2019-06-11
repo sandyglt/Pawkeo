@@ -8,14 +8,16 @@
 
 .title-home {
   color: white;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700 !important;
-  padding-top: 24px;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: left;
+  padding-top: 16px;
+  padding-left: 8%;
+  padding-right: 8%;
+  text-align: center;
   span{
-    color: $purple;
+    background-image:linear-gradient(to left, $purple, $pink);
+    color:rgba(0, 0, 0, 0);
+    -webkit-background-clip:text;
   }
 }
 
@@ -25,7 +27,7 @@
   padding-left: 15px;
   padding-right: 15px;
   font-weight: 400;
-  opacity: 0.7;
+  opacity: 0.8;
   text-align: center;
 }
 
@@ -46,20 +48,4 @@
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 15px); }
     to   { transform: translate(0, -0px); }
-}
-
-.btn-start {
-  color: white;
-  font-weight: 700 !important;
-  font-size: 30px;
-  letter-spacing: 2px;
-  background-color: $purple;
-  border-radius: 50px;
-  width: 70%;
-  height: 48px;
-  margin: auto;
-  margin-top: 50px;
-  text-align: center;
-  position: relative;
-  bottom: 15px;
 }

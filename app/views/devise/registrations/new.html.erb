@@ -1,5 +1,8 @@
-<div class="card-signup">
-  <h2 class="txt-gradient-blue">Sign up</h2>
+<div class="form-signup">
+
+  <%= image_tag("pawkeo.svg", id:"logo") %>
+
+  <h2>Sign up</h2>
 
   <i class="fas fa-times" id="cross-leave-signup"></i>
 
@@ -21,7 +24,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up"%>
+      <%= f.button :submit, "SIGN UP", class: "btn-start"%>
     </div>
   <% end %>
 

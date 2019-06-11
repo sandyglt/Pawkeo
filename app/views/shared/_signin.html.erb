@@ -4,7 +4,7 @@
 
 
     <div class="title-home">
-      <p> Find your <span>parking</span> spot easily</p>
+      <p> Find a <span>parking</span><span> spot </span> easily</p>
     </div>
 
     <div class="subtitle-home">
@@ -16,11 +16,13 @@
     </div>
 
 
-    <div class="card-login">
+    <div class="form-login">
+
+      <%= image_tag("pawkeo.svg", id:"logo") %>
 
       <i class="fas fa-times" id="cross-leave"></i>
 
-      <h2 class="txt-gradient-blue">Welcome to PAWKEO</h2>
+      <h2>Welcome</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -35,8 +37,9 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", id: "btn-login", data: {target: "#exampleModal", toggle: "modal"}%>
+          <%= f.button :submit, "LOG IN", id: "btn-login"%>
         </div>
+
       <div class="pt-2">
         <%= render "devise/shared/links" %>
       </div>
