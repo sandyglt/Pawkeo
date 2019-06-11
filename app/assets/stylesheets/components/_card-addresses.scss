@@ -2,7 +2,7 @@
   height: 120px;
   background: white;
   align-items: center;
-  margin-bottom:20px;
+  margin-bottom:15px;
   border-radius:14px;
   border-style: solid;
   border-color: grey;
@@ -32,6 +32,10 @@
 .card-addresses .card-addresses-infos {
   padding: 16px;
   align-items: center;
+  display: flex;
+  // #home{
+
+  // }
   // i{
   //   font-size: 24px;
   // }

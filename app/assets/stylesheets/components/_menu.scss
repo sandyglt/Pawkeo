@@ -12,7 +12,7 @@
   .menu-content {
     position: absolute;
     height: 100%;
-    width: 70%;
+    width: 80%;
     top: 0;
     background: white;
   }
@@ -86,13 +86,19 @@
   font-size:27px;
 }
 
+.btn-container{
+  display: flex;
+
+
+}
+
 .btn-addresses{
   text-align: center;
   cursor: default;
   color: white !important;
   background-color: $dark-blue !important;
   box-sizing: border-box;
-  padding: 6px 12px;
+  padding: 12px 18px;
   border-width: 0px !important;
   border-style: none !important;
   border-color: none !important;
@@ -102,16 +108,11 @@
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: bold;
+  width: 100%;
 }
 
 .addresses{
   padding:10px;
-  margin-bottom:20px;
-
-}
-
-.menu-footer{
-  align-items:center;
   margin-bottom:20px;
 
 }
@@ -134,7 +135,8 @@
 
 .logout{
   display: flex;
-  justify-content: start;
+  justify-content: flex-end;
+  padding: 8px;
   a{
     color: black;
   }

@@ -28,7 +28,7 @@
             <h2 id="menu-category">My favorite addresses</h2>
             <div class="card-addresses">
                 <div class="card-addresses-infos">
-                  <i class="fas fa-home"></i>
+                  <i class="fas fa-home" id="home"></i>
                   <div>
                     <h2>Home</h2>
                     <p>28, rue des Lilas<br>75011 Paris</p>
@@ -55,19 +55,16 @@
                 <%= render 'address', address: @myaddress %>
               <% end %>
             </div>
-
+            <div class="btn-container">
+              <button type="button"class="btn-addresses">
+                Create an address
+              </button>
+            </div>
         </div>
       </div>
-      <div class="menu-footer">
-        <button type="button"class="btn-addresses">
-          Create an address
-        </button>
-        <div>
-        </div>
+      <div class="logout">
+        <%= link_to 'Sign-out', destroy_user_session_path,  method: :delete %>
       </div>
-          <div class="logout">
-            <%= link_to 'Sign-out', destroy_user_session_path,  method: :delete %>
-          </div>
     </div>
   </div>
 </div>
