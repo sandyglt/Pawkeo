@@ -4,8 +4,20 @@ class SpotSearchesController < ApplicationController
     @address = Address.new
     session[:spot_search_id] = @spot_search.id
     @myaddress = Address.where(user: current_user).last
-    @spots = Spot.where.not(lat: nil, lng: nil, used: true)
-    @spot_markers = @spots.map do |spot|
+    # @spots = Spot.where.not(lat: nil, lng: nil, used: true)
+    # spots_used = Array.new
+    # spots_agglo = @spots.map do |spot|
+    #   if !spots_used.uniq.include?(spot)
+    #     array = Spot.near([spot.lat, spot.lng], 0.01, units: :km) - spots_used
+    #     array.each do |spot| spots_used << spot 
+    #     end
+    #   end
+    # end
+    # spots = Spot.gathered_spots.map do |spots_agglo|
+    #   spots_agglo.sample
+    # end
+
+    @spot_markers = Spot.gathered_spots.map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng
@@ -23,13 +35,13 @@ class SpotSearchesController < ApplicationController
 
   def create
     @spot_search = SpotSearch.new
-    @spot_search[:start_time] = Date.new
-    @spot_search[:orig_lng] = 48.8649
-    @spot_search[:orig_lat] = 2.3800699999999324
+    @spot_search[:start_time] = Time.new
+    @spot_search[:orig_lng] = params[:spot][:lng]
+    @spot_search[:orig_lat] = params[:spot][:lat]
     @spot_search[:dest_lng] = @spot_search[:orig_lng]
     @spot_search[:dest_lat] = @spot_search[:orig_lat]
     @spot_search[:user_id] = current_user[:id]
-    if@spot_search.save
+    if @spot_search.save
       redirect_to spot_search_path(@spot_search)
     else
       render :show

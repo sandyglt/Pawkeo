@@ -16,7 +16,7 @@ function addAddress(addressHTML) {
 }
 
 function closeForm() {
- document.getElementById('close-address').click();
+  document.getElementById('close-address').click();
 }
 
 function autocomplete() {
@@ -60,3 +60,14 @@ function searchFav() {
 <% end %>
 autocomplete();
 searchFav()
+
+initSweetalert('.sweet-alert-demo', {
+  title: "Delete the address",
+  text: "Are you sure ?",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('.delete-link');
+    link.click();
+  }
+});
