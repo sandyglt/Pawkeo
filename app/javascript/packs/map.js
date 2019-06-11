@@ -2,6 +2,8 @@
 import { autocomplete } from '../components/autocomplete';
 import { sendLocation } from '../components/pawk_now';
 import { loopItinerary } from '../components/around_me';
+import { parkLocation } from '../components/toggle_spot';
+
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -376,10 +378,11 @@ if (mapElement) {
 
     sendLocation(map);
     loopItinerary(map);
+    parkLocation(map);
 
-    
-    
+
     // // function calcRoute() {
+
         navigator.geolocation.watchPosition(function () {}, function () {}, {});
         //The working next statement.
         navigator.geolocation.watchPosition(function (position) {
@@ -392,6 +395,7 @@ if (mapElement) {
         }, {
         enableHighAccuracy: true
         });
+
     // // }
 };
 

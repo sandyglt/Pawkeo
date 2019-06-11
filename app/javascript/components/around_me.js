@@ -19,11 +19,12 @@ const loopItinerary = (map) => {
       // console.log(lng);
       spot_lat.value = lat;
       spot_lng.value = lng;
-      console.log('Current position finded!');
+      console.log('Current position found!');
       // form.submit();
       const formData = new FormData(form);
+      console.log(formData);
       fetch(`/spot_searches/${spot_search.dataset.uid}/spots/around`,
-        { 
+        {
           method: 'post',
           credentials: 'same-origin',
           body: formData
@@ -34,7 +35,7 @@ const loopItinerary = (map) => {
             const waypointOne = data[0];
             const waypointTwo = data[1];
             const waypointThree = data[2]
-          
+
 
             const directionsService = new google.maps.DirectionsService();
             const directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true, polylineOptions: { strokeColor: '#4becd9', strokeWeight: 8 } });
