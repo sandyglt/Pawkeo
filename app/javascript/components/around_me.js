@@ -1,5 +1,5 @@
 const loopItinerary = (map) => {
-  const aroundMe = document.querySelector('.around-me');
+  const aroundMe = document.querySelector('.around-me img');
   // console.log(aroundMe);
   const form = document.querySelector('.hidden-form-around');
   const spot_lat = document.querySelector('#spot_latitude');
