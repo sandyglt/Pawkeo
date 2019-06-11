@@ -41,8 +41,19 @@
       <% end %>
   </div>
 
-  <div class="btn-start">
-    <h1>START</h1>
-  </div>
+  <% if current_user %>
+    <div class="btn-start" id="btn-start-logged">
+      <h1>START</h1>
+      <%= simple_form_for([@spot_search, Spot.new], html: { class: "form-start d-none" }, url: spot_searches_url, method: :post) do |f| %>
+      <%= f.input :lat, input_html: { id: 'spotsea_latitude' } %>
+      <%= f.input :lng, input_html: { id: 'spotsea_longitude' } %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="btn-start" id="btn-start">
+      <h1>START</h1>
+    </div>
+  <% end %>
 
 </div>
