@@ -1,25 +1,25 @@
 function refreshForm(innerHTML) {
   const newAddressForm = document.querySelector('#address-form-body');
   newAddressForm.innerHTML = innerHTML;
-  console.log("refresh");
+  // console.log("refresh");
 }
 
 function removeAddress() {
   const lastAddress = document.querySelector('.addresses .new-address .card-addresses');
   lastAddress.remove();
-  console.log("remove");
+  // console.log("remove");
 }
 
 function addAddress(addressHTML) {
   const addresses = document.querySelector('.addresses .new-address');
   addresses.insertAdjacentHTML('beforeend', addressHTML);
-  console.log("add");
+  // console.log("add");
 }
 
 
 function closeForm() {
  document.getElementById('close-address').click();
- console.log("close");
+ // console.log("close");
 }
 
 function autocomplete() {
@@ -51,7 +51,7 @@ function searchFav() {
       searchBar.submit();
     });
   }
-  console.log("searchfav");
+  // console.log("searchfav");
 };
 
 removeAddress();
