@@ -3,7 +3,7 @@ const start = document.querySelector('.btn-start');
 const leave = document.getElementById('cross-leave');
 const leaveup = document.getElementById('cross-leave-signup');
 const logged = document.querySelector('#btn-start-logged');
-const form = document.querySelector('.form-start');
+const forms = document.querySelector('.form-start');
 const spotsea_lat = document.querySelector('#spotsea_latitude');
 const spotsea_lng = document.querySelector('#spotsea_longitude');
 
@@ -40,7 +40,7 @@ if (logged) {
       spotsea_lng.value = lng;
       console.log('Current position found!');
       // form.submit();
-      form.submit();
+      forms.submit();
     });
   });
 }
