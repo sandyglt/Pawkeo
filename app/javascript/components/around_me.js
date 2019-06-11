@@ -19,7 +19,7 @@ const loopItinerary = (map) => {
       // console.log(lng);
       spot_lat.value = lat;
       spot_lng.value = lng;
-      console.log('Current position finded!');
+      console.log('Current position found!');
       // form.submit();
       const formData = new FormData(form);
       console.log(formData);
