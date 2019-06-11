@@ -1,6 +1,5 @@
-
-const card = document.querySelector('.card-login');
-const start = document.getElementById('btn-start');
+const form = document.querySelector('.form-login');
+const start = document.querySelector('.btn-start');
 const leave = document.getElementById('cross-leave');
 const leaveup = document.getElementById('cross-leave-signup');
 const logged = document.querySelector('#btn-start-logged');
@@ -10,13 +9,13 @@ const spotsea_lng = document.querySelector('#spotsea_longitude');
 
 if (start) {
   start.addEventListener('click', () => {
-    card.classList.add('display');
+    form.classList.add('display');
   });
 }
 
 if (leave) {
   leave.addEventListener('click', () => {
-    card.classList.remove('display');
+    form.classList.remove('display');
   });
 }
 

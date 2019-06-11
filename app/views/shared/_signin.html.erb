@@ -1,24 +1,28 @@
-<div class="container p-0 min-height-100vh overflow-hidden bg-blue">
+<div class="container p-0 min-height-100vh overflow-hidden bg-blue d-flex flex-column">
 
     <%= image_tag("pawkeo.svg", id:"logo") %>
 
 
-  <div class="under-wave">
-    <div class="description">
-      <h1 class="mb-0"> KEEP CALM </h1>
-      <p>AND</p>
-      <h1>FIND A SPOT</h1> <br>
-      <span> Pawkeo helps you find a spot to park your car, around you or a specific address. </span>
-        <div class="phone-anim">
-      <%= image_tag("Phone.png") %>
-    </div>
+    <div class="title-home">
+      <p> Find a <span>parking</span><span> spot </span> easily</p>
     </div>
 
-    <div class="card-login">
+    <div class="subtitle-home">
+      <span> Pawkeo helps you find a spot to park your car, around you or a specific address. </span>
+    </div>
+
+    <div class="phone-anim">
+      <%= image_tag("Phone.png") %>
+    </div>
+
+
+    <div class="form-login">
+
+      <%= image_tag("pawkeo.svg", id:"logo") %>
 
       <i class="fas fa-times" id="cross-leave"></i>
 
-      <h2 class="txt-gradient-blue">Welcome to PAWKEO</h2>
+      <h2>Welcome</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -33,13 +37,15 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", id: "btn-login", data: {target: "#exampleModal", toggle: "modal"}%>
+          <%= f.button :submit, "LOG IN", id: "btn-login"%>
         </div>
+
       <div class="pt-2">
         <%= render "devise/shared/links" %>
       </div>
       <% end %>
   </div>
+
 
   <% if current_user %>
     <div class="btn-start" id="btn-start-logged">
@@ -52,8 +58,7 @@
     </div>
   <% else %>
     <div class="btn-start" id="btn-start">
-      <h1>START</h1>
+      <p>START</p>
     </div>
   <% end %>
-
 </div>
