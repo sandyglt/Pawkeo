@@ -1,5 +1,4 @@
 .card-addresses {
-  height: 120px;
   background: white;
   align-items: center;
   margin-bottom:15px;
@@ -13,6 +12,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-align: left;
 }
 
 .card-addresses p {
@@ -21,24 +21,26 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  text-align: left;
 }
 
-// .card-content {
-//   a {
-//     font-color: grey;
-//     text-decoration: none;
-//   }
-// }
+.card-addresses .card-addresses-infos .card-content {
+  display: flex;
+    i{
+      margin-right: 10px;
+      margin-bottom: 37px;
+    }
+  position: relative;
+}
+
 .card-addresses .card-addresses-infos {
   padding: 16px;
   align-items: center;
   display: flex;
-  // #home{
-
-  // }
-  // i{
-  //   font-size: 24px;
-  // }
+    i{
+      margin-right: 10px;
+      margin-bottom: 37px;
+    }
   position: relative;
 }
 
