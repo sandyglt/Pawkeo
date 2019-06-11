@@ -2,8 +2,10 @@
   <div class="card-addresses-infos">
     <div class="card-content" data-address="<%= address.address %>">
       <i class="fas fa-bookmark"></i>
+      <div class="address-content">
       <h2><%= address.name %></h2>
       <p><%= address.address %></p>
+      </div>
     </div>
     <i class="fas fa-trash-alt sweet-alert-demo"></i>
     <%= link_to address_path(address), method: :delete, remote: true, class: "trashy delete-link" do %>
