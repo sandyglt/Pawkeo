@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:spot_search_id])
     @spot.used = false
-    @spot.freed_at = Time.new.to_i
+    @spot.freed_at = Time.new
     # démarre le compteur temps
     @spot.save!
     render json: @spot
@@ -21,7 +21,7 @@ class SpotsController < ApplicationController
     @cloud.destroy_all
     create
     @spot.used = true
-    @spot.taken_at = Time.new.to_i
+    @spot.taken_at = Time.new
     @spot.save!
     render json: @spot
   end
