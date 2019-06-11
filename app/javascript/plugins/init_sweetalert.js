@@ -9,6 +9,15 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
   }
 };
 
+initSweetalert('#sweet-alert-demo', {
+  title: "Delete the address",
+  text: "Are you sure ?",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
 export { initSweetalert };
-
 
