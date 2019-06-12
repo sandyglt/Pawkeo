@@ -1,14 +1,20 @@
-const parkLocation = (map) => {
+const parkLocation = (map, my_car) => {
   const toggle = document.querySelector('.onoffswitch-checkbox');
-
-  const pin = {
+  let my_marker = my_car;
+  const car = {
     url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559853953/Car_qrwqcb.png',
     size: new google.maps.Size(71, 71),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(17, 34),
     scaledSize: new google.maps.Size(32, 32)
   };
-
+  const pin = {
+      url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559813309/mini-pin_gnqp3e.svg',
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(32, 32)
+  };
   toggle.addEventListener('click', (event) => {
     if (toggle.checked === true) {
 
@@ -42,7 +48,7 @@ const parkLocation = (map) => {
         .then((data) => {
           const updateSpotForm = document.getElementById('update-spot-form');
           updateSpotForm.innerHTML = data.html;
-          new google.maps.Marker({ position: new google.maps.LatLng(lat, lng), icon: pin, map: map });
+          my_marker = new google.maps.Marker({ position: new google.maps.LatLng(lat, lng), icon: car, map: map });
           console.log('Car marker added!');
         });
       });
@@ -50,6 +56,7 @@ const parkLocation = (map) => {
     } else {
       const formUpdate = document.querySelector('.hidden-form-update');
       formUpdate.submit();
+      my_marker.setIcon(pin);
       console.log('Spot freed!');
     }
   });

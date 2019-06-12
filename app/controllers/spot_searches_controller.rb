@@ -4,7 +4,6 @@ class SpotSearchesController < ApplicationController
     @address = Address.new
     session[:spot_search_id] = @spot_search.id
     @myaddress = Address.where(user: current_user).last
-
     @spot_markers = Spot.gathered_spots.map do |spot|
       {
         lat: spot.lat,
@@ -18,6 +17,14 @@ class SpotSearchesController < ApplicationController
       }
     ]
     @markers = [@spot_markers, @destination_marker]
+    @my_spot = current_user.spots.find_by(used: true)
+    if @my_spot.present?
+      @my_marker = [{
+        lat: @my_spot.lat,
+        lng: @my_spot.lng
+      }]
+      @markers = [@spot_markers, @destination_marker, @my_marker]
+    end
     @user = current_user
   end
 
