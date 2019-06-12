@@ -32,40 +32,26 @@ if (leaveup) {
 if (logged) {
   logged.addEventListener('click', (event) => {
     console.log('Now geocoding...');
-    //Dummy one, which will result in a working next statement.
-    navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-    //The working next statement.
-    navigator.geolocation.getCurrentPosition(function (position) {
-      let lat = position.coords.latitude;
-      let lng = position.coords.longitude;
-      // console.log(lat);
-      // console.log(lng);
-      spotsea_lat.value = lat;
-      spotsea_lng.value = lng;
-      console.log('Current position found!');
-      // form.submit();
-      forms.submit();
-    });
+
+
+      fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyB_RT5j23hWFaxweruTai_jboHpdph0Yjc`,
+      {
+        method: 'post'
+      }
+    )
+      .then(response => response.json())
+      .then((data) => {
+      
+        const lat = data.location.lat;
+        const lng = data.location.lng;
+        console.log('Current position found!');
+      
+        spotsea_lat.value = lat;
+        spotsea_lng.value = lng;
+
+
+        forms.submit();
+      });
   });
 }
-
-// if (login) {
-//   login.addEventListener('click', (event) => {
-//     console.log('Now geocoding...');
-//     //Dummy one, which will result in a working next statement.
-//     navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
-//     //The working next statement.
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       let lat = position.coords.latitude;
-//       let lng = position.coords.longitude;
-//       // console.log(lat);
-//       // console.log(lng);
-//       user_lat.value = lat;
-//       user_lng.value = lng;
-//       console.log('Current position found!');
-//       // form.submit();
-//       formp.submit();
-//     });
-//   });
-// }
 
