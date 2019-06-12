@@ -17,18 +17,18 @@ class SpotsController < ApplicationController
   end
 
   def destroy_cloud
-    # @spot_search = SpotSearch.find(params[:spot_search_id])
+    @spot_search = SpotSearch.find(session[:spot_search_id])
     @cloud = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km)
+    @spot_search.update(spot_id: nil)
     @cloud.destroy_all
-
     @spot = Spot.new
-    @spot.freed_at = Time.new
     @spot.lng = params[:spot][:lng]
     @spot.lat = params[:spot][:lat]
-
     @spot.used = true
     @spot.taken_at = Time.new
     @spot.save!
+    @spot_search.spot = @spot
+    @spot_search.save
     render json: { html: render_to_string(partial: 'spots/edit', locals: { spot: @spot }) }
   end
 
