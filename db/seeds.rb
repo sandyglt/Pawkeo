@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+SpotSearch.destroy_all
+User.destroy_all
+Spot.destroy_all
 
 puts "User seed creation"
 User.create!(
@@ -26,10 +29,11 @@ SpotSearch.create!(
 )
 
 
-puts "60 Spots seeds creation"
-60.times do
-  genlat = 48.86 + rand(0.0..0.015)
-  genlng = 2.37 + rand(0.0..0.03)
+puts "1000 Spots seeds creation"
+1000.times do
+  puts "Spot created!"
+  genlat = 48.85 + rand(0.0..0.03)
+  genlng = 2.34 + rand(0.0..0.05)
 Spot.create!(
   lng: genlng,
   lat: genlat,

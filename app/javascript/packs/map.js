@@ -3,6 +3,8 @@ import { autocomplete } from '../components/autocomplete';
 import { sendLocation } from '../components/pawk_now';
 import { loopItinerary } from '../components/around_me';
 import { parkLocation } from '../components/toggle_spot';
+import { changeSearchBar } from "../components/search_bar";
+import MarkerCluster from '@pod-point/google-maps-marker-cluster';
 
 
 const mapElement = document.getElementById('map');
@@ -345,11 +347,11 @@ if (mapElement) {
     ]
     });
     const pin = {
-        url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559813309/mini-pin_gnqp3e.svg',
-        size: new google.maps.Size(64, 64),
-        origin: new google.maps.Point(-12, -12),
-        anchor: new google.maps.Point(-11, 10),
-        scaledSize: new google.maps.Size(32, 32)
+        url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,h_30,q_100,w_24/v1559813309/mini-pin_gnqp3e.png',
+        size: new google.maps.Size(24, 30),
+        origin: new google.maps.Point(0, 0),
+        // anchor: new google.maps.Point(-11, 10),
+        // scaledSize: new google.maps.Size(38, 48)
     };
     const dotdest = {
         url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/blue-dot_mzdar3.svg',
@@ -366,22 +368,29 @@ if (mapElement) {
         scaledSize: new google.maps.Size(32, 32)
     };
     const markers = JSON.parse(mapElement.dataset.markers);
+    let test = [];
     markers[0].forEach((marker) => {
-        new google.maps.Marker({ position: new google.maps.LatLng(marker.lat, marker.lng), icon: pin, map: map });
+        test.push(
+            new google.maps.Marker({ position: new google.maps.LatLng(marker.lat, marker.lng), icon: pin, map: map })
+        )
+        
     });
+    new MarkerCluster(map, test,
+        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
     markers[1].forEach((destination) => {
         new google.maps.Marker({ position: new google.maps.LatLng(destination.lat, destination.lng), icon: dotdest, map: map });
     });
     let my_car = null;
     if (markers[2]) {
-      const toggle = document.querySelector('.onoffswitch-checkbox');
-      toggle.checked = true;
-      const my_marker = markers[2][0];
-      my_car = new google.maps.Marker({ position: new google.maps.LatLng(my_marker.lat, my_marker.lng), icon: car, map: map });
+        const toggle = document.querySelector('.onoffswitch-checkbox');
+        toggle.checked = true;
+        const my_marker = markers[2][0];
+        my_car = new google.maps.Marker({ position: new google.maps.LatLng(my_marker.lat, my_marker.lng), icon: car, map: map });
     }
 
     const dot = {
-        url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/white-dot_lw69js.svg',
+        url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_32/v1560069760/white-dot_lw69js.png',
         size: new google.maps.Size(16, 16),
         scaledSize: new google.maps.Size(16, 16)
     };
@@ -392,6 +401,10 @@ if (mapElement) {
     loopItinerary(map);
     parkLocation(map, my_car);
     autocomplete();
+    changeSearchBar();
+
+    // const trafficLayer = new google.maps.TrafficLayer();
+    // trafficLayer.setMap(map);
 
     navigator.geolocation.watchPosition(function () {}, function () {}, {});
     navigator.geolocation.watchPosition(function (position) {
