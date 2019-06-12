@@ -10,6 +10,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     @spot.used = false
+    @spot.my_spot = false
     @spot.freed_at = Time.new
     # démarre le compteur temps
     @spot.save!
@@ -20,12 +21,10 @@ class SpotsController < ApplicationController
     # @spot_search = SpotSearch.find(params[:spot_search_id])
     @cloud = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.5, units: :km)
     @cloud.destroy_all
-
     @spot = Spot.new
-    @spot.freed_at = Time.new
     @spot.lng = params[:spot][:lng]
     @spot.lat = params[:spot][:lat]
-
+    @spot.my_spot = true
     @spot.used = true
     @spot.taken_at = Time.new
     @spot.save!
