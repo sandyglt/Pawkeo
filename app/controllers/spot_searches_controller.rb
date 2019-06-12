@@ -4,18 +4,6 @@ class SpotSearchesController < ApplicationController
     @address = Address.new
     session[:spot_search_id] = @spot_search.id
     @myaddress = Address.where(user: current_user).last
-    # @spots = Spot.where.not(lat: nil, lng: nil, used: true)
-    # spots_used = Array.new
-    # spots_agglo = @spots.map do |spot|
-    #   if !spots_used.uniq.include?(spot)
-    #     array = Spot.near([spot.lat, spot.lng], 0.01, units: :km) - spots_used
-    #     array.each do |spot| spots_used << spot 
-    #     end
-    #   end
-    # end
-    # spots = Spot.gathered_spots.map do |spots_agglo|
-    #   spots_agglo.sample
-    # end
 
     @spot_markers = Spot.gathered_spots.map do |spot|
       {

@@ -3,7 +3,6 @@ const loopItinerary = (map) => {
   const form = document.querySelector('.hidden-form-around');
   const spot_lat = document.querySelector('#spot_latitude');
   const spot_lng = document.querySelector('#spot_longitude');
-  const spot_search = document.querySelector('#divinvisible');
   
   aroundMe.addEventListener('click', (event) => {
     fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyB_RT5j23hWFaxweruTai_jboHpdph0Yjc`,
@@ -20,7 +19,7 @@ const loopItinerary = (map) => {
           spot_lng.value = lng;
           console.log('Current position found!');
           const formData = new FormData(form);
-          fetch(`/spot_searches/${spot_search.dataset.uid}/spots/around`,
+          fetch(`/spots/around`,
         {
           method: 'post',
           credentials: 'same-origin',

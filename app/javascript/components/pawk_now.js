@@ -32,7 +32,6 @@ const sendLocation = (map) => {
         form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
       
         new google.maps.Marker({ position: new google.maps.LatLng(lat, lng), icon: pin, map: map });
-        debugger
         console.log('Marker added!');
       });
   });
