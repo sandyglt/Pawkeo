@@ -8,13 +8,14 @@
   transform: translateX(-100%);
   transition: all .3s ease-in-out;
   text-align:center;
+  color: $dark-blue;
 
   .menu-content {
     position: absolute;
     height: 100%;
     width: 80%;
     top: 0;
-    background: white;
+    background: #f4f4f4;
   }
 }
 
@@ -34,7 +35,7 @@
 
 
   .form-submit{
-    background-image: linear-gradient(to bottom, $purple, #a52775);
+    background-image: linear-gradient(to left, $purple, $pink);
     border-radius: 50px;
     width:60%;
     margin: 32px auto;
@@ -80,23 +81,25 @@
   font-size: 24px;
   margin-bottom: 16px;
   margin-top: 16px;
+  color: $purple;
+  font-weight: 500;
 }
 
 #menu-title{
   font-size:27px;
+  color: $purple;
+  font-weight: 500
 }
 
 .btn-container{
   display: flex;
-
-
 }
 
 .btn-addresses{
   text-align: center;
   cursor: default;
+  background-image: linear-gradient(to left, $pink, $purple)!important;
   color: white !important;
-  background-color: $dark-blue !important;
   box-sizing: border-box;
   padding: 12px 18px;
   border-width: 0px !important;
@@ -105,10 +108,10 @@
   border-image: none !important;
   border-bottom-right-radius: 14px;
   border-bottom-left-radius: 14px;
-  align-items: center;
+  align-item: center;
   margin-bottom: 20px;
+  font-weight: 200 !important;
   font-size: 16px;
-  font-weight: bold;
   width: 100%;
 }
 
