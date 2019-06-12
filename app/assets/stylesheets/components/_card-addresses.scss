@@ -1,7 +1,13 @@
+.addresses{
+  padding:10px;
+  margin-bottom:20px;
+
+}
+
 .card-addresses {
   background: white;
   align-items: center;
-  margin-bottom:15px;
+  margin-bottom:10px;
   border-style: none;
 
 }
@@ -12,38 +18,26 @@
 
 }
 
-.card-br-top{
+.card-br-top {
   border-top-right-radius: 14px;
   border-top-left-radius: 14px;
 }
 .card-addresses h2 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 700;
   margin: 0;
   text-align: left;
 }
 
 .card-addresses p {
   font-size: 12px;
+  font-weight: 700;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   text-align: left;
   max-width: 150px;
-}
-
-.card-addresses .card-addresses-infos .card-content {
-  display: flex;
-    i{
-      margin-right: 10px;
-      margin-bottom: 46px;
-    }
-    .address-content{
-      display: flex;
-      flex-direction: column;
-    }
-  position: relative;
 }
 
 .card-addresses .card-addresses-infos {
@@ -58,3 +52,15 @@
   position: relative;
 }
 
+.card-addresses .card-addresses-infos .card-content {
+  display: flex;
+    i{
+      margin-right: 10px;
+      margin-bottom: 46px;
+    }
+    .address-content{
+      display: flex;
+      flex-direction: column;
+    }
+  position: relative;
+}
