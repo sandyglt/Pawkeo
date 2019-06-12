@@ -16,7 +16,11 @@
           <span class="onoffswitch-inner"></span>
           <span class="onoffswitch-switch"><%= image_tag("car.png") %></span>
       </label>
-      <div class="d-none" id="update-spot-form"></div>
+      <div class="d-none" id="update-spot-form">
+        <% if @my_spot.present? %>
+          <%= render 'spots/edit', spot: @my_spot %>
+        <% end %>
+      </div>
       <%= simple_form_for(Spot.new, html: { class: "hidden-form-destroy d-none" }, url: destroy_cloud_spots_path, method: :post) do |f| %>
         <%= f.input :lat, input_html: { id: 'spot_latitude_destroy' } %>
         <%= f.input :lng, input_html: { id: 'spot_longitude_destroy' } %>

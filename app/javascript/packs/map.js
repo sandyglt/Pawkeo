@@ -358,6 +358,13 @@ if (mapElement) {
         anchor: new google.maps.Point(0, 0),
         scaledSize: new google.maps.Size(16, 16)
     };
+    const car = {
+        url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559853953/Car_qrwqcb.png',
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(32, 32)
+    };
     const markers = JSON.parse(mapElement.dataset.markers);
     markers[0].forEach((marker) => {
         new google.maps.Marker({ position: new google.maps.LatLng(marker.lat, marker.lng), icon: pin, map: map });
@@ -365,6 +372,13 @@ if (mapElement) {
     markers[1].forEach((destination) => {
         new google.maps.Marker({ position: new google.maps.LatLng(destination.lat, destination.lng), icon: dotdest, map: map });
     });
+    let my_car = null;
+    if (markers[2]) {
+      const toggle = document.querySelector('.onoffswitch-checkbox');
+      toggle.checked = true;
+      const my_marker = markers[2][0];
+      my_car = new google.maps.Marker({ position: new google.maps.LatLng(my_marker.lat, my_marker.lng), icon: car, map: map });
+    }
 
     const dot = {
         url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/white-dot_lw69js.svg',
@@ -376,20 +390,19 @@ if (mapElement) {
 
     sendLocation(map);
     loopItinerary(map);
-    parkLocation(map);
+    parkLocation(map, my_car);
     autocomplete();
 
     navigator.geolocation.watchPosition(function () {}, function () {}, {});
     navigator.geolocation.watchPosition(function (position) {
-    
+
     map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
     marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 
     }, function (e) {
-    
+
     alert("Sorry, browser does not support geolocation!");
     }, {
     enableHighAccuracy: true
     });
-
 };
