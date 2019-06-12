@@ -1,5 +1,5 @@
 const form = document.querySelector('.form-login');
-const start = document.querySelector('.btn-start');
+const start = document.querySelector('#btn-start');
 const leave = document.getElementById('cross-leave');
 const leaveup = document.getElementById('cross-leave-signup');
 const logged = document.querySelector('#btn-start-logged');
