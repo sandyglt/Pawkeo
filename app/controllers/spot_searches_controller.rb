@@ -9,7 +9,7 @@ class SpotSearchesController < ApplicationController
     # spots_agglo = @spots.map do |spot|
     #   if !spots_used.uniq.include?(spot)
     #     array = Spot.near([spot.lat, spot.lng], 0.01, units: :km) - spots_used
-    #     array.each do |spot| spots_used << spot 
+    #     array.each do |spot| spots_used << spot
     #     end
     #   end
     # end
@@ -38,13 +38,11 @@ class SpotSearchesController < ApplicationController
     @spot_search[:start_time] = Time.new
     @spot_search[:orig_lng] = params[:spot][:lng]
     @spot_search[:orig_lat] = params[:spot][:lat]
-    @spot_search[:dest_lng] = @spot_search[:orig_lng]
-    @spot_search[:dest_lat] = @spot_search[:orig_lat]
     @spot_search[:user_id] = current_user[:id]
     if @spot_search.save
       redirect_to spot_search_path(@spot_search)
     else
-      render :show
+      render :root
     end
   end
 

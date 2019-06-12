@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    root_path
+    @spot_search = SpotSearch.new
+    @spot_search[:start_time] = Time.new
+    @spot_search[:orig_lng] = 48
+    @spot_search[:orig_lat] = 2
+    @spot_search[:user_id] = current_user[:id]
+    @spot_search.save
+    spot_search_path(@spot_search)
   end
 
   def default_url_options
