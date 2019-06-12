@@ -380,23 +380,18 @@ if (mapElement) {
     loopItinerary(map);
     parkLocation(map);
 
+    navigator.geolocation.watchPosition(function () {}, function () {}, {});
+    navigator.geolocation.watchPosition(function (position) {
+    //Your code here
+    map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+    marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+    }, function (e) {
+    //Your error handling here
+    alert("Sorry, browser does not support geolocation!");
+    }, {
+    enableHighAccuracy: true
+    });
 
-    // // function calcRoute() {
-
-        navigator.geolocation.watchPosition(function () {}, function () {}, {});
-        //The working next statement.
-        navigator.geolocation.watchPosition(function (position) {
-        //Your code here
-        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        }, function (e) {
-        //Your error handling here
-        alert("Sorry, browser does not support geolocation!");
-        }, {
-        enableHighAccuracy: true
-        });
-
-    // // }
 };
 
 autocomplete();
