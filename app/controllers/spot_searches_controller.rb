@@ -4,7 +4,6 @@ class SpotSearchesController < ApplicationController
     @address = Address.new
     session[:spot_search_id] = @spot_search.id
     @myaddress = Address.where(user: current_user).last
-
     @spot_markers = Spot.gathered_spots.map do |spot|
       {
         lat: spot.lat,
@@ -26,13 +25,11 @@ class SpotSearchesController < ApplicationController
     @spot_search[:start_time] = Time.new
     @spot_search[:orig_lng] = params[:spot][:lng]
     @spot_search[:orig_lat] = params[:spot][:lat]
-    @spot_search[:dest_lng] = @spot_search[:orig_lng]
-    @spot_search[:dest_lat] = @spot_search[:orig_lat]
     @spot_search[:user_id] = current_user[:id]
     if @spot_search.save
       redirect_to spot_search_path(@spot_search)
     else
-      render :show
+      render :root
     end
   end
 
