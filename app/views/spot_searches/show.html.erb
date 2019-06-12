@@ -16,11 +16,17 @@
           <span class="onoffswitch-inner"></span>
           <span class="onoffswitch-switch"><%= image_tag("car.png") %></span>
       </label>
+      <div class="d-none" id="update-spot-form"></div>
+      <%= simple_form_for(Spot.new, html: { class: "hidden-form-destroy d-none" }, url: destroy_cloud_spots_path, method: :post) do |f| %>
+        <%= f.input :lat, input_html: { id: 'spot_latitude_destroy' } %>
+        <%= f.input :lng, input_html: { id: 'spot_longitude_destroy' } %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
   <div class="around-me">
     <%= image_tag("around-me.png") %>
-    <%= simple_form_for([@spot_search, Spot.new], html: { class: "hidden-form-around d-none" }, url: spot_search_spots_around_path(@spot_search), method: :post) do |f| %>
+    <%= simple_form_for(Spot.new, html: { class: "hidden-form-around d-none" }, url: around_spots_path, method: :post) do |f| %>
       <%= f.input :lat, input_html: { id: 'spot_latitude' } %>
       <%= f.input :lng, input_html: { id: 'spot_longitude' } %>
       <%= f.submit %>

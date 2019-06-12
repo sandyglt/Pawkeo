@@ -1,0 +1,5 @@
+  <%= simple_form_for(spot, html: { class: "hidden-form-update d-none" }) do |f| %>
+    <%= f.input :lat, input_html: { id: 'spot_latitude_update' } %>
+    <%= f.input :lng, input_html: { id: 'spot_longitude_update' } %>
+    <%= f.submit %>
+  <% end %>

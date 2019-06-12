@@ -4,8 +4,7 @@
   <title>Oops! Looks like you're heading to the wrong spot! (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .bg-blue {
-    background-color: #00002a;
+  .mt-20{
     margin-top: 20vh;
   }
   .logo-center img{
@@ -13,11 +12,11 @@
     width: 50%;
   }
   .main {
-    background-color: #00002a;
+    background: linear-gradient(180deg, rgba(1,1,102,1) 40%, rgba(0,0,45,1) 100%);
     height: 100vh;
     color: white;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: "Amaranth", sans-serif;
     margin: 0;
     overflow: hidden;
   }
@@ -25,18 +24,27 @@
     width: 90%;
     margin: 0 auto;
   }
+
   .button {
-    background-color: #9a26af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 2px;
     border-radius: 50px;
-    padding: 6px 12px;
-    width: 50%;
-    margin: 32px auto;
+    border: none;
+    width: 55%;
+    height: 48px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    background-image:linear-gradient(90deg, rgba(154,38,175,1) 60%, rgba(255,135,240,1) 100%);
   }
-  a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+
+  .button a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 700 !important;
   }
 
   </style>
@@ -44,7 +52,7 @@
 
 <body class="main">
   <!-- This file lives in public/404.html -->
-  <div class="bg-blue">
+  <div class=" mt-20">
     <div class="logo-center">
       <img src="/images/shortlogo.png" alt="pawkeo">
     </div>
