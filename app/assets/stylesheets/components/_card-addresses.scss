@@ -2,11 +2,19 @@
   background: white;
   align-items: center;
   margin-bottom:15px;
-  border-radius:14px;
-  border-style: solid;
-  border-color: grey;
-  border-width: 0.5px;
+  border-style: none;
 
+}
+
+.card-br-btm {
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+
+}
+
+.card-br-top{
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
 }
 .card-addresses h2 {
   font-size: 16px;
@@ -22,13 +30,14 @@
   margin-bottom: 0;
   margin-top: 8px;
   text-align: left;
+  max-width: 150px;
 }
 
 .card-addresses .card-addresses-infos .card-content {
   display: flex;
     i{
       margin-right: 10px;
-      margin-bottom: 37px;
+      margin-bottom: 46px;
     }
     .address-content{
       display: flex;
@@ -43,7 +52,8 @@
   display: flex;
     i{
       margin-right: 10px;
-      margin-bottom: 37px;
+      margin-bottom: 46px;
+      font-size:19px;
     }
   position: relative;
 }
