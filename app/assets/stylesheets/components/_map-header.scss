@@ -59,3 +59,34 @@ input {
     opacity: 1; /* Firefox */
   }
 }
+
+.pac-container{
+  font-family: "Montserrat", "sans-serif";
+  width: 100%;
+  color: white;
+  background-color: rgb(150, 150, 150);
+  border-radius: 0px 0px 15px 2px;
+  padding: 5px;
+  border: none;
+}
+
+.pac-item{
+  color: white;
+}
+
+.pac-icon{
+}
+
+.pac-matched{
+  color: $purple;
+}
+
+.change-search{
+  width: 100%;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(150, 150, 150);
+  border-radius: 15px 2px 0px 0px;
+  border: none;
+}
