@@ -346,9 +346,9 @@ if (mapElement) {
     });
     const pin = {
         url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559813309/mini-pin_gnqp3e.svg',
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
+        size: new google.maps.Size(64, 64),
+        origin: new google.maps.Point(-12, -12),
+        anchor: new google.maps.Point(-11, 10),
         scaledSize: new google.maps.Size(32, 32)
     };
     const dotdest = {
@@ -382,9 +382,7 @@ if (mapElement) {
 
     const dot = {
         url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/white-dot_lw69js.svg',
-        // size: new google.maps.Size(64, 64),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(0, 0),
+        size: new google.maps.Size(16, 16),
         scaledSize: new google.maps.Size(16, 16)
     };
 
