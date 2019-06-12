@@ -383,12 +383,12 @@ if (mapElement) {
 
     navigator.geolocation.watchPosition(function () {}, function () {}, {});
     navigator.geolocation.watchPosition(function (position) {
-    
+
     map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
     marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 
     }, function (e) {
-    
+
     alert("Sorry, browser does not support geolocation!");
     }, {
     enableHighAccuracy: true
