@@ -48,7 +48,7 @@ class SpotSearchesController < ApplicationController
     search_coordinates = results.first.coordinates
     @spot_search.dest_lat = search_coordinates.first
     @spot_search.dest_lng = search_coordinates.last
-    @spot_search.update(search_params)
+    @spot_search.save
     @spots = Spot.gathered_spots.near([@spot_search.dest_lat, @spot_search.dest_lng], 1, units: :km).limit(3)
     @waypoints = @spots.map do |spot|
       {

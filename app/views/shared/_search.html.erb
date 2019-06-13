@@ -1,4 +1,4 @@
-<%= simple_form_for spot_search, defaults: { input_html: { class: 'inline' } }, remote: true do |form| %>
+<%= simple_form_for spot_search, defaults: { input_html: { class: 'inline' } } do |form| %>
   <%= form.input_field :search_address, class: "autocomplete", placeholder: "Enter a destination" %>
   <%= form.submit '', method: :update, class: "d-none" %>
 <% end %>
