@@ -48,11 +48,28 @@
 
 .onoffswitch {
   position: relative;
-  width: 180px;
+  width: 140px;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select: none;
 }
+.onoffswitch-switch {
+  display: block;
+  width: 53px;
+  margin: 6px;
+  // background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 47px;
+  // border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  transition: all 0.3s ease-in 0s;
+  img{
+    width: 53px;
+  }
+}
+
 .onoffswitch-checkbox {
   display: none;
 }
@@ -94,6 +111,7 @@
   color: #FFFFFF;
   text-align: right;
 }
+
 .onoffswitch-switch {
   display: block;
   width: 53px;
@@ -110,6 +128,7 @@
     width: 53px;
   }
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
 }
