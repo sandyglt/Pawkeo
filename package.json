@@ -2,6 +2,7 @@
   "name": "Pawkeo",
   "private": true,
   "dependencies": {
+    "@pod-point/google-maps-marker-cluster": "^1.0.2",
     "@rails/webpacker": "^4.0.6",
     "alert": "^1.0.0",
     "bootstrap": "^4.3.1",
