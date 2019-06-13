@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  has_many :spot_searches
+  has_many :spot_searches, dependent: :destroy
   reverse_geocoded_by :lat, :lng
   validates :lng, :lat, presence: true
 
@@ -14,12 +14,12 @@ class Spot < ApplicationRecord
       end
     end
 
-    sample = results.map { |group| group.sample }
+    first = results.map { |group| group.first }
     
 
-    sample.map { |spot| spot.id } 
+    first.map { |spot| spot.id } 
 
-    self.where(id: sample)
+    self.where(id: first)
   end
   
 end
