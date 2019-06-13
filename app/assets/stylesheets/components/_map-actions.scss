@@ -36,7 +36,7 @@
   position: absolute;
   z-index: 2;
   left: 50%;
-  bottom: 128px;
+  bottom: 32px !important;
   // width: 40px;
   // height: 40px;
   justify-content: space-around;
@@ -48,7 +48,7 @@
 
 .onoffswitch {
   position: relative;
-  width: 112px;
+  width: 180px;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select: none;
