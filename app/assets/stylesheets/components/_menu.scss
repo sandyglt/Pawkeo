@@ -119,6 +119,18 @@
     }
   }
 
+.form-address-container {
+  label{
+    font-weight: 600;
+    font-size:24px
+  }
+
+  input{
+    font-weight: 600;
+    font-size: 24px
+  }
+}
+
 #address-form-body{
   height: 80%;
   display: flex;
