@@ -10,7 +10,7 @@ const searchFav = () => {
     addressElement.addEventListener('click', (event) => {
       input.value = addressElement.dataset.address;
       // console.log(input.value)
-      searchBar.submit();
+      searchBar.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
     });
   }
 };
