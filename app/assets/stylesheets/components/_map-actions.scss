@@ -99,14 +99,14 @@
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-  content: "Parked";
-  padding-left: 17px;
+  content: "Park";
+  padding-left: 13px;
   background-color: #4becd9;
   color: #FFFFFF;
 }
 .onoffswitch-inner:after {
   content: ">>>";
-  padding-right: 45px;
+  padding-right: 24px;
   background-color: #EB1534;
   color: #FFFFFF;
   text-align: right;
@@ -120,7 +120,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 114px;
+  right: 75px;
   // border: 2px solid #FFFFFF;
   border-radius: 10px;
   transition: all 0.3s ease-in 0s;
