@@ -25,14 +25,6 @@
   margin-top:20px;
 }
 
-hr {
-  background-color: gray !important;
-  height: 1px;
-  border-radius: 1px;
-  opacity: 0.6;
-  margin: 16px 30px;
-}
-
 #menu-category{
   font-size: 32px;
   padding-top: 20px;
@@ -96,11 +88,13 @@ hr {
 
 .trashy {
   position: absolute;
-  top: 16px;
+  top: 36px;
   right: 16px;
-  font-size: 16px;
   color: $dark-blue;
   opacity: 0.6;
+  i {
+    font-size: 12px !important;
+  }
   &:hover {
     opacity: 1;
   }
@@ -116,6 +110,7 @@ hr {
   top: 16px;
   left: 10px;
 }
+
 #address-form {
   position: absolute;
   height: 100%;
@@ -123,15 +118,16 @@ hr {
   transform: translateY(100%);
   transition: transform .3s ease-in-out;
   z-index: 3;
-  box-sizing: none !important;
-   .form-data {
-    input {
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: none !important;
-        font-size: 20px;
-    }
+  .form-data input {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 20px;
   }
+  .form-data .input-form {
+    font-weight: 300 !important;
+  }
+}
+
 
 #address-form-body{
   height: 80%;
@@ -151,7 +147,6 @@ hr {
       font-weight: bold;
       width: 100%;
     }
-  }
 }
 
 #close-address{
@@ -162,7 +157,7 @@ hr {
   text-align: center;
   cursor: default;
   color: white !important;
-  background-color: $dark-blue !important;
+  background-color: transparent !important;
   box-sizing: none;
   padding: 2px 6px 3px;
   border-width: 0px !important;
@@ -172,7 +167,7 @@ hr {
 
   i{
     color: white !important;
-    font-size: 12px;
+    font-size: 16px;
     z-index: 2000;
   }
 }
