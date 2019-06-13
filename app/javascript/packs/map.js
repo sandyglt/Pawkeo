@@ -6,6 +6,8 @@ import { parkLocation } from '../components/toggle_spot';
 import { changeSearchBar } from "../components/search_bar";
 import MarkerCluster from '@pod-point/google-maps-marker-cluster';
 
+navigator.geolocation.watchPosition(function () {}, function () {}, {});
+navigator.geolocation.watchPosition(function (position) {
 
 const mapElement = document.getElementById('map');
 if (mapElement) {
@@ -397,25 +399,22 @@ if (mapElement) {
 
     const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });
 
-    sendLocation(map);
-    loopItinerary(map);
-    parkLocation(map, my_car);
+    sendLocation(map, position);
+    loopItinerary(map, position);
+    parkLocation(map, my_car, position);
     autocomplete();
     changeSearchBar();
 
     // const trafficLayer = new google.maps.TrafficLayer();
     // trafficLayer.setMap(map);
-
-    navigator.geolocation.watchPosition(function () {}, function () {}, {});
-    navigator.geolocation.watchPosition(function (position) {
-
+    
     map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
     marker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+};
 
     }, function (e) {
 
     alert("Sorry, browser does not support geolocation!");
     }, {
     enableHighAccuracy: true
-    });
-};
+});
