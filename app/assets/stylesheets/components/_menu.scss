@@ -1,5 +1,4 @@
 //Menu
-
 #menuglobal {
   position: absolute;
   top: 0px;
@@ -112,6 +111,16 @@
 }
 
 #address-form {
+  #logo {
+  padding-top: 0px !important;
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+  position: absolute;
+  top: 3px;
+  left: 10px;
+}
+
   position: absolute;
   height: 100%;
   width: 100%;
@@ -128,6 +137,18 @@
   }
 }
 
+
+.form-address-container {
+  label{
+    font-weight: 600;
+    font-size:24px
+  }
+
+  input{
+    font-weight: 600;
+    font-size: 24px
+  }
+}
 
 #address-form-body{
   height: 80%;
