@@ -401,7 +401,6 @@ navigator.geolocation.getCurrentPosition(function (position) {
         sendLocation(map, position);
         loopItinerary(map, position);
         parkLocation(map, my_car, position);
-        autocomplete();
         changeSearchBar();
 
         // const trafficLayer = new google.maps.TrafficLayer();
@@ -418,3 +417,5 @@ navigator.geolocation.getCurrentPosition(function (position) {
         });
     };
 });
+
+autocomplete();
