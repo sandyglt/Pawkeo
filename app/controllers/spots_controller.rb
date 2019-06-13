@@ -20,7 +20,7 @@ class SpotsController < ApplicationController
     @spot_search = SpotSearch.find(session[:spot_search_id])
     @cloud = Spot.near([params[:spot][:lat], params[:spot][:lng]], 0.01, units: :km)
     @spot_search.update(spot_id: nil)
-    @cloud.destroy_all
+    @cloud.each &:destroy
     @spot = Spot.new
     @spot.lng = params[:spot][:lng]
     @spot.lat = params[:spot][:lat]
