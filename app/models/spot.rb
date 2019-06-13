@@ -14,12 +14,12 @@ class Spot < ApplicationRecord
       end
     end
 
-    sample = results.map { |group| group.sample }
+    first = results.map { |group| group.first }
     
 
-    sample.map { |spot| spot.id } 
+    first.map { |spot| spot.id } 
 
-    self.where(id: sample)
+    self.where(id: first)
   end
   
 end
