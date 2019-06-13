@@ -42,26 +42,26 @@ class SpotSearchesController < ApplicationController
   end
 
   def update
-    update_by_search
-  end
-
-  private
-
-  def search_params
-    params.require(:spot_search).permit(:dest_lat, :dest_lng)
-  end
-
-  def update_by_search
     @spot_search = SpotSearch.find(params[:id])
     search_address = params[:spot_search].values.last
     results = Geocoder.search(search_address)
     search_coordinates = results.first.coordinates
     @spot_search.dest_lat = search_coordinates.first
     @spot_search.dest_lng = search_coordinates.last
-    if @spot_search.update(search_params)
-      redirect_to spot_search_path(@spot_search)
-    else
-      render :show
+    @spot_search.update(search_params)
+    @spots = Spot.gathered_spots.near([@spot_search.dest_lat, @spot_search.dest_lng], 1, units: :km).limit(3)
+    @waypoints = @spots.map do |spot|
+      {
+        lat: spot.lat,
+        lng: spot.lng
+      }
     end
+    render json: [@waypoints, [dest_lat: @spot_search.dest_lat, dest_lng: @spot_search.dest_lng]]
+  end
+
+  private
+
+  def search_params
+    params.require(:spot_search).permit(:dest_lat, :dest_lng)
   end
 end
