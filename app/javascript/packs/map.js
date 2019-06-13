@@ -4,7 +4,7 @@ import { sendLocation } from '../components/pawk_now';
 import { loopItinerary } from '../components/around_me';
 import { parkLocation } from '../components/toggle_spot';
 import { changeSearchBar } from "../components/search_bar";
-import MarkerCluster from '@pod-point/google-maps-marker-cluster';
+// import MarkerCluster from '@pod-point/google-maps-marker-cluster';
 
 navigator.geolocation.getCurrentPosition(function () {}, function () {}, {});
 navigator.geolocation.getCurrentPosition(function (position) {
@@ -240,11 +240,11 @@ navigator.geolocation.getCurrentPosition(function (position) {
             scaledSize: new google.maps.Size(16, 16)
         };
         const car = {
-            url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1559853953/Car_qrwqcb.png',
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(32, 32)
+            url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_256/v1560462753/mycar_upguub.png',
+            size: new google.maps.Size(85, 32),
+            // origin: new google.maps.Point(0, 0),
+            //   anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(85, 32)
         };
         const markers = JSON.parse(mapElement.dataset.markers);
         // let test = [];
@@ -268,9 +268,9 @@ navigator.geolocation.getCurrentPosition(function (position) {
         }
 
         const dot = {
-            url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_32/v1560069760/white-dot_lw69js.png',
-            size: new google.maps.Size(16, 16),
-            scaledSize: new google.maps.Size(16, 16)
+            url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_512/v1560463111/color-dot_ecerib.png',
+            size: new google.maps.Size(128, 128),
+            scaledSize: new google.maps.Size(128, 128)
         };
 
         const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });

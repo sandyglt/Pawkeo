@@ -2,11 +2,11 @@ const parkLocation = (map, my_car, position) => {
   const toggle = document.querySelector('.onoffswitch-checkbox');
   let my_marker = my_car;
   const car = {
-    url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_36/v1559853953/Car_qrwqcb.png',
-    size: new google.maps.Size(36, 25),
-    origin: new google.maps.Point(0, 0),
-  //   anchor: new google.maps.Point(17, 34),
-  //   scaledSize: new google.maps.Size(32, 32)
+    url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_256/v1560462753/mycar_upguub.png',
+    size: new google.maps.Size(85, 32),
+    // origin: new google.maps.Point(0, 0),
+    //   anchor: new google.maps.Point(17, 34),
+    scaledSize: new google.maps.Size(85, 32)
   };
   const pin = {
     url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,h_30,q_100,w_24/v1559813309/mini-pin_gnqp3e.png',
