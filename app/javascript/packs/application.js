@@ -2,7 +2,6 @@ import "bootstrap";
 import "../plugins/menu_open";
 import "../components/signin";
 import "../plugins/address";
-import { changeSearchBar } from "../components/search_bar";
 import { searchFav } from "../components/search_fav";
 import { initSweetalert } from '../plugins/init_sweetalert';
 
@@ -23,4 +22,3 @@ window.initSweetalert = initSweetalert
 // window.myLib = {};
 // myLib.alert = initSweetalert;
 
-changeSearchBar();
