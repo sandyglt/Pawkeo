@@ -1,8 +1,8 @@
 <div class="form-address-container">
   <%= simple_form_for(address, remote: true, html: {class: 'd-flex flex-column'}) do |form| %>
     <div class="form-data text-center text-white">
-    <%= form.input :name, input_html: { class: "input-form" } %>
-    <%= form.input :address, input_html: { class: "autocomplete input-form" }, placeholder: "Enter an address" %>
+    <%= form.input :name, input_html: { class: "input-form" }, placeholder: "name the address" %>
+    <%= form.input :address, input_html: { class: "autocomplete input-form" }, placeholder: "type your address" %>
       <div class="form-submit">
       <%= form.button :submit %>
       </div>
