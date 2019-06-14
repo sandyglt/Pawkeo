@@ -62,7 +62,10 @@ seedadresses = [
 "Rue Louis Bonnet, Paris, France",
 "50 Rue Saint-Ambroise, Paris, France",
 "5 Rue Lechevin, Paris, France",
-"109 Rue Auberkampf, Paris, France"
+"104 Rue Oberkampf, Paris, France",
+"77 Rue Oberkampf, Paris, France",
+"46 Rue Oberkampf, Paris, France",
+"59 Avenue de la République, Paris, France"
 ]
 
 seedadresses.each_with_index do |address, index|
