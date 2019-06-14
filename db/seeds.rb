@@ -31,15 +31,42 @@ User.create!(
 # )
 
 
-puts "100 Spots seeds creation"
-100.times do
-  puts "Spot created!"
-  genlat = 48.85 + rand(0.0..0.03)
-  genlng = 2.34 + rand(0.0..0.05)
-Spot.create!(
-  lng: genlng,
-  lat: genlat,
-)
-end
+# puts "100 Spots seeds creation"
+# 100.times do
+#   puts "Spot created!"
+#   genlat = 48.85 + rand(0.0..0.03)
+#   genlng = 2.34 + rand(0.0..0.05)
+# Spot.create!(
+#   lng: genlng,
+#   lat: genlat,
+# )
 
-puts "Seeds done"
+seedadresses = [
+"20 Rue Etienne Dolet, Paris, France",
+"20 Rue Deguerry, Paris, France",
+"2 rue Ternaux",
+"1 Cité Ribot, Paris, France",
+"10 Avenue Jean Aicard, Paris, France",
+"10 Rue Edouard Lockroy, Paris, France",
+"10 Rue Neuve Popincourt, Paris, France",
+"5 Rue des Bluets, Paris, France",
+"5 Rue de Nemours, Paris, France",
+"24 Rue de la Folie Méricourt, Paris, France",
+"50 Rue Saint-Sébastien, Paris, France",
+"50 Rue du Grand Prieuré, Paris, France",
+"3 Passage Saint-Pierre Amelot, Paris, France",
+"10 Rue Jules Verne, Paris, France",
+"4 Rue Bisson, Paris, France",
+"20 Rue Ramponeau, Paris, France",
+"50 Rue Morand, Paris, France"
+]
+
+seedadresses.each_with_index do |address, index|
+  puts "Spot number #{index + 1}"
+  results = Geocoder.search(address)
+  search_coordinates = results.first.coordinates
+  Spot.create!(
+    lng: search_coordinates.last,
+    lat: search_coordinates.first,
+  )
+end
