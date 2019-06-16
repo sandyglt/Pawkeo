@@ -243,7 +243,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
             url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_256/v1560462753/mycar_upguub.png',
             size: new google.maps.Size(85, 32),
             // origin: new google.maps.Point(0, 0),
-            //   anchor: new google.maps.Point(17, 34),
+            anchor: new google.maps.Point(42, 16),
             scaledSize: new google.maps.Size(85, 32)
         };
         const markers = JSON.parse(mapElement.dataset.markers);
@@ -270,7 +270,8 @@ navigator.geolocation.getCurrentPosition(function (position) {
         const dot = {
             url: 'https://res.cloudinary.com/dposbbt0s/image/upload/c_scale,q_100,w_512/v1560463111/color-dot_ecerib.png',
             size: new google.maps.Size(128, 128),
-            scaledSize: new google.maps.Size(128, 128)
+            scaledSize: new google.maps.Size(128, 128),
+            anchor: new google.maps.Point(64, 64)
         };
 
         const marker = new google.maps.Marker({ position: new google.maps.LatLng(48.864848, 2.379853), icon: dot, map: map });
