@@ -234,9 +234,9 @@ navigator.geolocation.getCurrentPosition(function (position) {
         };
         const dotdest = {
             url: 'https://res.cloudinary.com/dposbbt0s/image/upload/v1560069760/blue-dot_mzdar3.svg',
-            // size: new google.maps.Size(64, 64),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 0),
+            size: new google.maps.Size(16, 16),
+            // origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(8, 8),
             scaledSize: new google.maps.Size(16, 16)
         };
         const car = {
